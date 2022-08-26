@@ -1,0 +1,54 @@
+.Wrapper {
+  width: 23%;
+
+  ol {
+    padding: 0px;
+    margin: 0px;
+  }
+  ol li {
+    padding-left: 25px;
+    font-weight: 400;
+    font-size: 20px;
+    line-height: 27px;
+    list-style: none;
+    cursor: pointer;
+  }
+  li:hover {
+    background: #fff5e0;
+    border-radius: 2px;
+  }
+}
+.firstThemeCatalog {
+  margin-top: 0px;
+}
+.filtersParams {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  label {
+    font-weight: 700;
+    font-size: 20px;
+    line-height: 27px;
+    cursor: pointer;
+  }
+}
+h4 {
+  font-weight: 700;
+  font-size: 20px;
+  line-height: 27px;
+  margin-bottom: 7px;
+  margin-top: 28px;
+}
+.secondBlockParam {
+  font-weight: 700;
+  font-size: 20px;
+  text-transform: uppercase;
+  margin-bottom: 7px;
+  margin-top: 32px;
+}
+.firstBlockParam {
+  font-weight: 700;
+  font-size: 20px;
+  text-transform: uppercase;
+  margin-bottom: 7px;
+}

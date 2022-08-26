@@ -1,0 +1,19 @@
+.blockSearch {
+  width: 317px;
+  height: 48px;
+  background: #ffffff;
+  border: 1px solid #e1e1e1;
+  border-radius: 16px;
+  position: relative;
+  background-image: url("../assets/search.png");
+  background-repeat: no-repeat; /*Убираем повтор изображения*/
+  background-position: 280px;
+  padding-left: 10px;
+  box-sizing: border-box;
+}
+.blockSearch:focus {
+  border: 1px solid #ff0000;
+}
+.blockSearch:hover {
+  border: 1px solid #ff0000;
+}

@@ -1,0 +1,127 @@
+.wrapper {
+  height: 100%;
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+}
+.container {
+  width: 1291px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+}
+.infoSite {
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+  cursor: pointer;
+  a {
+    text-decoration: none;
+  }
+}
+
+.catalogButton {
+  display: flex;
+  width: 132px;
+  height: 48px;
+  border-radius: 31px;
+  background-color: #ff0000;
+  outline: none;
+  border: none;
+  align-items: center;
+  justify-content: center;
+  font-family: "Nunito";
+  font-style: normal;
+  font-size: 16px;
+  color: #ffffff;
+  cursor: pointer;
+  img {
+    margin-right: 8px;
+    width: 18px;
+    height: 12px;
+  }
+}
+.catalogButton:hover {
+  background: #ffa900;
+}
+
+.logoSite {
+  width: 200px;
+  height: 55px;
+}
+
+.delivery {
+  width: 295px;
+  height: 48px;
+  display: flex;
+  color: white;
+  &__left {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    width: 65px;
+    background: rgba(255, 169, 0, 0.7);
+    border-radius: 16px 0px 0px 16px;
+    font-size: 16px;
+  }
+  &__right {
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+    justify-content: center;
+    width: 230px;
+    background: #ffa900;
+    border-radius: 0px 16px 16px 0px;
+    p {
+      font-size: 14px;
+      b {
+        font-size: 16px;
+      }
+    }
+  }
+}
+.buttons {
+  display: flex;
+
+  &__button {
+    height: 48px;
+    width: 50px;
+    border: 1px solid #e1e1e1;
+    border-radius: 16px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+  &__button:hover {
+    background: #fff8eb;
+    border: 1px solid #ffa900;
+    cursor: pointer;
+  }
+  &__button:first-child {
+    margin-right: 14px;
+  }
+}
+
+.cart {
+  width: 130px;
+  height: 48px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: #ff0000;
+  border-radius: 16px;
+  color: white;
+  cursor: pointer;
+  img {
+    width: 26px;
+    height: 22px;
+    margin-right: 13px;
+  }
+}
+.cart:hover {
+  background: #ffa900;
+}

@@ -1,0 +1,72 @@
+.wrapperItems {
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
+  justify-items: center;
+}
+.catalog {
+  margin-top: 81px;
+  display: flex;
+  flex-direction: column;
+}
+.filters {
+  display: flex;
+}
+.filterAsk {
+  display: flex;
+  justify-content: space-between;
+  margin-bottom: 40px;
+}
+.typeCatalog {
+  font-weight: 700;
+  font-size: 32px;
+
+  text-transform: uppercase;
+
+  color: #000000;
+}
+.setFilter {
+  background: #fff8eb;
+  border: 1px solid rgba(255, 169, 0, 0.45);
+  border-radius: 16px;
+  font-size: 16px;
+  text-align: center;
+  width: 181px;
+  height: 38px;
+  line-height: 35px;
+  color: #000000;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.SelectFilter {
+  height: 100px;
+}
+.popup {
+  position: absolute;
+  top: 235px;
+  width: 181px;
+  background: #fff8eb;
+  border: 1px solid rgba(255, 169, 0, 0.45);
+  border-radius: 16px;
+}
+.setFilterPopup {
+  background: #fff8eb;
+  border-bottom: 1px solid rgba(255, 169, 0, 0.45);
+  border-radius: 16px;
+  font-size: 16px;
+  text-align: center;
+  width: 181px;
+  height: 38px;
+  line-height: 35px;
+  color: #000000;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.ascDesc {
+  transform: rotate(-90deg);
+}
+.ascDescRotate {
+  transform: rotate(90deg);
+}
