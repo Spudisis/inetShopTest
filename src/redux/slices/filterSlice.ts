@@ -6,12 +6,17 @@ export type statefilter = {
   filterBy: string;
   ascDesc: string;
   type: string;
-  filtersView: string[];
+  filtersView: filterViewT[];
+};
+
+type filterViewT = {
+  class: string;
+  classForPerson: string;
 };
 
 const initialState: statefilter = {
   search: "",
-  filterBy: "name",
+  filterBy: "price",
   ascDesc: "asc",
   type: "",
   filtersView: [],
@@ -39,9 +44,26 @@ export const dataSlice = createSlice({
       state.type = "";
       state.filtersView = [];
     },
-    addFilterView: (state, action: PayloadAction<string>) => {
-      state.filtersView.filter((obj) => obj !== action.payload);
-      state.filtersView.push(action.payload);
+    addFilterView: (state, action: PayloadAction<filterViewT>) => {
+      const check = state.filtersView.filter(
+        (obj) =>
+          obj.class !== action.payload.class &&
+          obj.classForPerson !== action.payload.classForPerson
+      );
+      check.length < state.filtersView.length
+        ? (state.filtersView = check)
+        : state.filtersView.push(action.payload);
+    },
+    deleteFilterView: (state, action: PayloadAction<filterViewT>) => {
+      const newMas = state.filtersView.filter(
+        (obj) =>
+          obj.class !== action.payload.class &&
+          obj.classForPerson !== action.payload.classForPerson
+      );
+      state.filtersView = newMas;
+    },
+    deleteAllFilterView: (state) => {
+      state.filtersView = [];
     },
     clearFilterView: (state) => {
       state.filtersView = [];
@@ -62,6 +84,8 @@ export const {
   addType,
   deleteType,
   addFilterView,
+  deleteFilterView,
+  deleteAllFilterView,
   clearFilterView,
 } = dataSlice.actions;
 

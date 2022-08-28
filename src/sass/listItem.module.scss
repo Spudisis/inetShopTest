@@ -3,10 +3,12 @@
   width: 304px;
   display: flex;
   flex-direction: column;
+
   border-radius: 20px;
   border: 1px solid #dadada;
-  margin: 25px;
+  margin: 5px;
 }
+
 .img {
   height: 220px;
   width: 100%;
@@ -115,4 +117,28 @@
     top: 4px;
     font-size: 20px;
   }
+}
+.counterBuy {
+  background: #fff8eb;
+  border: 1px solid #ffe7b9;
+  border-radius: 58px;
+  width: 109px;
+  height: 42px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+.changeCounter {
+  margin: 0px 5px;
+  height: 29px;
+  width: 29px;
+  border-radius: 50%;
+  text-align: center;
+  line-height: 20px;
+  border: none;
+  color: #ffa900;
+}
+.changeCounter:hover {
+  color: white;
+  background: #ffa900;
 }

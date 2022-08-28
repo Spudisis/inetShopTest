@@ -7,6 +7,7 @@
   margin-top: 81px;
   display: flex;
   flex-direction: column;
+  width: 1291px;
 }
 .filters {
   display: flex;
@@ -39,7 +40,7 @@
   justify-content: center;
 }
 .SelectFilter {
-  height: 100px;
+  min-height: 100px;
 }
 .popup {
   position: absolute;
@@ -69,4 +70,10 @@
 }
 .ascDescRotate {
   transform: rotate(90deg);
+}
+.itemsFiltersSet {
+  width: 100%;
+}
+.warn {
+  font-size: 20px;
 }

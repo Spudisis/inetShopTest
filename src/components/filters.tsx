@@ -1,29 +1,60 @@
 import React from "react";
 import { addFilterView, addType } from "../redux/slices/filterSlice";
-import { changeParamSale } from "../redux/slices/sortSlice";
+import { changeParamSale, gerSortData } from "../redux/slices/sortSlice";
 import { useAppDispatch } from "../redux/store";
 import s from "../sass/filters.module.scss";
-const Filters = () => {
+import ItemForFilters from "../assets/Json/ItemForFilters.json";
+import { useSelector } from "react-redux";
+
+const Filters: React.FC = () => {
   const dispatch = useAppDispatch();
-  const [saleYes, setSaleYes] = React.useState(false);
+  const { sale } = useSelector(gerSortData);
+  const [saleYes, setSaleYes] = React.useState(sale);
   const id = React.useId();
   const SendFilterType = (type: string) => {
     dispatch(addType(type));
+    ItemForFilters.map((elem) => {
+      elem.type === type &&
+        dispatch(() => ChangeClassProduct(elem.class, elem.classForPerson));
+    });
   };
-  const ChangeClassProduct = (classProduct: string) => {
-    dispatch(addFilterView(classProduct));
+  const ChangeClassProduct = (classT: string, classForPerson: string) => {
+    const classAdd = { class: classT, classForPerson: classForPerson };
+    dispatch(addFilterView(classAdd));
   };
 
   React.useEffect(() => {
     dispatch(changeParamSale(saleYes));
-  });
+  }, [saleYes]);
+
+  React.useEffect(() => {
+    setSaleYes(sale);
+  }, [sale]);
+  const renderFilterParams = (type: string) => {
+    return ItemForFilters.map(
+      (obj, index) =>
+        obj.type === type && (
+          <li
+            onClick={() => ChangeClassProduct(obj.class, obj.classForPerson)}
+            key={index + type}
+          >
+            {obj.classForPerson}
+          </li>
+        )
+    );
+  };
 
   return (
     <div className={s.Wrapper}>
       <div className={s.filtersParams}>
         <h3 className={s.firstBlockParam}>Особенности</h3>
         <div>
-          <input type="checkbox" id={id + "1"} />
+          <input
+            type="checkbox"
+            id={id + "1"}
+            checked={saleYes}
+            onChange={() => {}}
+          />
           <label htmlFor={id + "1"} onClick={() => setSaleYes(!saleYes)}>
             Со скидкой
           </label>
@@ -46,45 +77,19 @@ const Filters = () => {
           >
             Кулинария
           </h4>
-          <ol>
-            <li onClick={(e) => ChangeClassProduct("backery")}>Выпечка</li>
-            <li>Пиццы</li>
-            <li>Гриль-меню</li>
-            <li>Салаты</li>
-            <li>Супы</li>
-            <li>Горячие блюда</li>
-            <li>Десерты</li>
-          </ol>
+          <ol>{renderFilterParams("Кулинария")}</ol>
         </div>
         <div>
           <h4 onClick={() => SendFilterType("Супермаркет")}>Супермаркет</h4>
-          <ol>
-            <li>Вода и напитки</li>
-            <li>Молоко, масло и яйца</li>
-            <li>Снэки и сухофрукты</li>
-            <li>Кофе, чай и сладости</li>
-            <li>Макароны и крупы</li>
-            <li>Хлеб и выпечка</li>
-            <li>Масло, соусы и специи</li>
-            <li>Консервы и соления</li>
-          </ol>
+          <ol>{renderFilterParams("Супермаркет")}</ol>
         </div>
         <div onClick={() => SendFilterType("Заморозка")}>
           <h4>Заморозка</h4>
-          <ol>
-            <li>Пельмени, вареники и равиоли</li>
-            <li>Хинкали и манты</li>
-            <li>Полуфабрикаты</li>
-            <li>Замороженные овощи</li>
-          </ol>
+          <ol>{renderFilterParams("Заморозка")}</ol>
         </div>
         <div>
           <h4 onClick={() => SendFilterType("Другое")}>Другое</h4>
-          <ol>
-            <li>Красота и гигиена</li>
-            <li>Стирка и уборка</li>
-            <li>Полезные мелочи</li>
-          </ol>
+          <ol>{renderFilterParams("Другое")}</ol>
         </div>
       </div>
     </div>

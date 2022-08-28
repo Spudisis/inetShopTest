@@ -8,6 +8,12 @@ import {
   getItemsLike,
 } from "../redux/slices/likeItems";
 import { useSelector } from "react-redux";
+import {
+  getCartItems,
+  ItemCart,
+  setItemsCart,
+} from "../redux/slices/cartSlice";
+import ButtonBuy from "./buttonBuy";
 
 export interface propsItem {
   nameProd: string;
@@ -33,11 +39,13 @@ const ListItem = ({
   saleProd,
 }: propsItem) => {
   const itemsLike: propsItem[] = useSelector(getItemsLike);
+
   const dispatch = useAppDispatch();
 
   const [style, setStyle] = React.useState(
     like === "yes" ? s.likeActive : s.like
   );
+
   const [priceSale, setPriceSale] = React.useState(0);
 
   React.useEffect(() => {
@@ -59,6 +67,7 @@ const ListItem = ({
       dispatch(deleteLikeProduct(prop.id));
     }
   };
+
   return (
     <div className={s.container}>
       <div className={s.img}>
@@ -96,7 +105,11 @@ const ListItem = ({
         </div>
         <div className={s.title}>
           {nameProd}, {title}, {weight}&nbsp;
-          {classProduct === ("water" || "milk") ? "Л" : "гр."}
+          {classProduct === "water"
+            ? "Л"
+            : classProduct === "milk"
+            ? "Л"
+            : "гр."}
         </div>
         <div className={s.bottomCard}>
           <div className={s.priceBottom}>
@@ -109,7 +122,17 @@ const ListItem = ({
               price + " Руб."
             )}
           </div>
-          <button className={s.button}>В корзину</button>
+          <ButtonBuy
+            id={id}
+            price={price}
+            title={title}
+            count={count}
+            weight={weight}
+            imageUrl={imageUrl}
+            classProduct={classProduct}
+            nameProd={nameProd}
+            saleProd={saleProd}
+          />
         </div>
       </div>
     </div>

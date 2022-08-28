@@ -4,7 +4,6 @@
   display: flex;
   justify-content: center;
   align-items: center;
-  flex-direction: column;
 }
 .container {
   width: 1291px;
@@ -14,9 +13,10 @@
   flex-direction: column;
 }
 .infoSite {
-  width: 100%;
+  width: inherit;
   display: flex;
   justify-content: space-between;
+  flex-wrap: wrap;
   cursor: pointer;
   a {
     text-decoration: none;
@@ -124,4 +124,32 @@
 }
 .cart:hover {
   background: #ffa900;
+}
+.blockF {
+  display: flex;
+  width: 580px;
+  justify-content: space-between;
+}
+.blockF:first-child {
+  width: 700px;
+}
+@media screen and (max-width: 1310px) {
+  .infoSite {
+    max-width: 1010px;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column-reverse;
+  }
+  .blockF {
+    width: 700px;
+  }
+  .blockF:first-child {
+    margin-top: 20px;
+    width: 700px;
+  }
+}
+@media screen and (max-width: 720px) {
+}
+
+@media screen and (max-width: 530px) {
 }

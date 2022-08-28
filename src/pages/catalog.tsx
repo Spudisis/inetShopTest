@@ -10,6 +10,8 @@ import {
   getDataItems,
   Item,
   ItemsType,
+  setItems,
+  Status,
 } from "../redux/slices/items";
 import {
   addAscdesc,
@@ -45,14 +47,14 @@ const sortingParams = [
 
 const Catalog: React.FC = () => {
   const dispatch = useAppDispatch();
-  const items: Item[] = useSelector(getDataItems);
+
+  const { items, itemsDop, loading }: ItemsType = useSelector(getDataItems);
   const [visible, isVisible] = React.useState(false);
   const [sortingParam, setSortingParam] = React.useState("По цене");
   const [rotateArrow, setRotateArrow] = React.useState(s.ascDesc);
   const { search, filterBy, ascDesc, filtersView, type }: statefilter =
     useSelector(getFilterData);
   const { sale }: stateSort = useSelector(gerSortData);
-
   const fetchData = () => {
     dispatch(fetchProductMock({ search, filterBy, ascDesc, type, sale }));
   };
@@ -67,6 +69,26 @@ const Catalog: React.FC = () => {
     setSortingParam(name);
     isVisible(false);
   };
+
+  const changeNewMass = () => {
+    let newIt: Item[] = items;
+    if (filtersView.length !== 0) {
+      newIt = [];
+      items.forEach((elem) => {
+        filtersView.forEach((obj) => {
+          if (obj.class === elem.class) {
+            newIt.push(elem);
+          }
+        });
+      });
+    }
+    dispatch(setItems(newIt));
+  };
+
+  React.useEffect(() => {
+    window.scrollTo(0, 0);
+  }, []);
+
   React.useEffect(() => {
     fetchData();
   }, [search, filterBy, ascDesc, type]);
@@ -77,7 +99,11 @@ const Catalog: React.FC = () => {
     });
   }, [sortingParam]);
 
-  const itemRenderSale = items.map(
+  React.useEffect(() => {
+    changeNewMass();
+  }, [filtersView, items]);
+
+  const itemRenderSale = itemsDop.map(
     (obj) =>
       obj.sale !== 0 && (
         <ListItem
@@ -95,7 +121,7 @@ const Catalog: React.FC = () => {
       )
   );
 
-  const itemRenderOutSale = items.map((obj) => (
+  const itemRenderOutSale = itemsDop.map((obj) => (
     <ListItem
       id={obj.id}
       price={obj.price}
@@ -138,16 +164,24 @@ const Catalog: React.FC = () => {
       </div>
       <div className={s.filters}>
         <Filters />
-        <div>
+        <div className={s.itemsFiltersSet}>
           <div className={s.SelectFilter}>
             <SetFilters />
           </div>
           <div className={s.wrapperItems}>
-            {items.length === 0
-              ? [...new Array(6)].map((_, index) => <Skeleton key={index} />)
-              : sale
-              ? itemRenderSale
-              : itemRenderOutSale}
+            {loading === Status.LOADING ? (
+              [...new Array(6)].map((_, index) => <Skeleton key={index} />)
+            ) : loading === Status.ERROR ? (
+              <div className={s.warn}>Произошла ошибка</div>
+            ) : itemsDop.length === 0 ? (
+              <div className={s.warn}>
+                Попробуйте другие параметры для поиска
+              </div>
+            ) : sale ? (
+              itemRenderSale
+            ) : (
+              itemRenderOutSale
+            )}
           </div>
         </div>
       </div>

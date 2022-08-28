@@ -1,0 +1,39 @@
+.button {
+  border: 1px solid #ff0000;
+  border-radius: 60px;
+  color: #ff0000;
+  font-weight: 600;
+  font-size: 16px;
+  padding: 0px 20px;
+  height: 50px;
+  cursor: pointer;
+}
+.button:hover {
+  background-color: #ffa900;
+  color: white;
+}
+
+.counterBuy {
+  background: #fff8eb;
+  border: 1px solid #ffe7b9;
+  border-radius: 58px;
+  width: 109px;
+  height: 42px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+.changeCounter {
+  margin: 0px 5px;
+  height: 29px;
+  width: 29px;
+  border-radius: 50%;
+  text-align: center;
+  line-height: 20px;
+  border: none;
+  color: #ffa900;
+}
+.changeCounter:hover {
+  color: white;
+  background: #ffa900;
+}

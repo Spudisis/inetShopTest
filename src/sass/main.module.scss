@@ -3,3 +3,108 @@
   grid-template-columns: 1fr 1fr 1fr;
   justify-items: center;
 }
+.listSale {
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr 1fr;
+  justify-items: center;
+  margin-bottom: 200px;
+}
+.saleBlockName {
+  display: flex;
+  justify-content: space-between;
+  margin-bottom: 37px;
+}
+.navigateSaleProduct {
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  height: 46px;
+  width: 80px;
+  background: #fff8eb;
+  border: 1px solid #ffe7b9;
+  border-radius: 58px;
+  button {
+    height: 29px;
+    width: 29px;
+    border-radius: 50%;
+    text-align: center;
+    line-height: 20px;
+    border: none;
+    color: #ffa900;
+    background-color: inherit;
+  }
+  button:hover {
+    background-color: #ffa900;
+    color: white;
+  }
+}
+.blocksTypesProduct {
+  margin-top: 114px;
+}
+
+.hBlockName {
+  display: flex;
+
+  h2 {
+    font-weight: 700;
+    font-size: 32px;
+    line-height: 44px;
+    margin-right: 29px;
+  }
+  button {
+    background: #fff8eb;
+    border: 1px solid #ffe7b9;
+    border-radius: 16px;
+    font-weight: 500;
+    font-size: 22px;
+    line-height: 25px;
+    height: 46px;
+    padding: 0px 17px;
+    color: #da9000;
+    cursor: pointer;
+  }
+  button:hover {
+    background: #ffa900;
+    border: 1px solid rgba(255, 169, 0, 0.45);
+    color: white;
+  }
+}
+.wrapperInfoBlocks {
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr 1fr;
+  justify-items: center;
+  margin-top: 43px;
+  margin-bottom: 130px;
+  a {
+    text-decoration: none;
+    color: black;
+  }
+  div {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-between;
+    margin-bottom: 22px;
+    width: 304px;
+    height: 304px;
+    background: #f7ffe6;
+    border: 1px solid #cce0a0;
+    border-radius: 58px;
+    position: relative;
+
+    span {
+      margin: 30px 10px 0px;
+      font-weight: 600;
+      font-size: 30px;
+      line-height: 41px;
+      text-align: center;
+    }
+    img {
+      overflow: hidden;
+      height: 100%;
+    }
+  }
+  div:hover {
+    border: 1px solid #ffa900;
+  }
+}

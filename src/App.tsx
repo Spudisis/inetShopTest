@@ -8,6 +8,7 @@ import "./sass/normalize.scss";
 import { Routes, Route } from "react-router-dom";
 import Profile from "./pages/profile";
 import Catalog from "./pages/catalog";
+import Cart from "./pages/cart";
 
 function App() {
   return (
@@ -21,6 +22,7 @@ function App() {
           <Route path="" element={<Main />} />
           <Route path="/profile" element={<Profile />} />
           <Route path="/catalog" element={<Catalog />} />
+          <Route path="/cart" element={<Cart />} />
         </Routes>
       </main>
       <footer className="footer">

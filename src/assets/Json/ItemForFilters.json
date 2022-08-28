@@ -1,0 +1,77 @@
+[
+  {
+    "type": "Супермаркет",
+    "class": "water",
+    "classForPerson": "Вода и напитки"
+  },
+  {
+    "type": "Супермаркет",
+    "class": "milk",
+    "classForPerson": "Молоко, масло и яйца"
+  },
+  {
+    "type": "Супермаркет",
+    "class": "snack",
+    "classForPerson": "Снэки и сухофрукты"
+  },
+  {
+    "type": "Супермаркет",
+    "class": "coffee",
+    "classForPerson": "Кофе, чай и сладости"
+  },
+  {
+    "type": "Супермаркет",
+    "class": "spagetty",
+    "classForPerson": "Макароны и крупы"
+  },
+  {
+    "type": "Супермаркет",
+    "class": "bread",
+    "classForPerson": "Хлеб и выпечка"
+  },
+  {
+    "type": "Супермаркет",
+    "class": "sause",
+    "classForPerson": "Масло, соусы и специи"
+  },
+  {
+    "type": "Супермаркет",
+    "class": "canned",
+    "classForPerson": "Консервы и соления"
+  },
+  { "type": "Кулинария", "class": "backery", "classForPerson": "Выпечка" },
+  { "type": "Кулинария", "class": "pizza", "classForPerson": "Пиццы" },
+  { "type": "Кулинария", "class": "grill", "classForPerson": "Гриль-меню" },
+  { "type": "Кулинария", "class": "salad", "classForPerson": "Салаты" },
+  { "type": "Кулинария", "class": "soup", "classForPerson": "Супы" },
+  { "type": "Кулинария", "class": "oil", "classForPerson": "Масло" },
+  { "type": "Кулинария", "class": "hot", "classForPerson": "Горячие блюда" },
+  { "type": "Кулинария", "class": "sugar", "classForPerson": "Десерты" },
+  { "type": "Заморозка", "class": "dumplings", "classForPerson": "Пельмени" },
+  { "type": "Заморозка", "class": "meat", "classForPerson": "Мясо" },
+  { "type": "Заморозка", "class": "fish", "classForPerson": "Рыба" },
+  {
+    "type": "Заморозка",
+    "class": "vegetables",
+    "classForPerson": "Замороженные овощи"
+  },
+  {
+    "type": "Заморозка",
+    "class": "semi-finished",
+    "classForPerson": "Полуфабрикаты"
+  },
+  { "type": "Заморозка", "class": "khinkali", "classForPerson": "Хинкали" },
+  { "type": "Заморозка", "class": "равиоли", "classForPerson": "Равиоли" },
+  {
+    "type": "Другое",
+    "class": "Beauty",
+    "classForPerson": "Красота и гигиена"
+  },
+  { "type": "Другое", "class": "Laundry", "classForPerson": "Всё для стирки" },
+  { "type": "Другое", "class": "things", "classForPerson": "Полезные мелочи" },
+  {
+    "type": "Другое",
+    "class": "appliances",
+    "classForPerson": "Домашняя техника"
+  }
+]
