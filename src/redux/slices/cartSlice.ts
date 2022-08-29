@@ -47,7 +47,11 @@ export const dataSlice = createSlice({
     delItemCart: (state, action: PayloadAction<string>) => {
       const findItem = state.items.find((obj) => obj.id === action.payload);
       if (findItem) {
-        findItem.countCart--;
+        if (findItem.countCart > 1) {
+          findItem.countCart--;
+        } else {
+          state.items = state.items.filter((obj) => obj.id !== action.payload);
+        }
         state.totalPrice = state.items.reduce((sum, obj) => {
           return (
             Math.ceil((obj.price / 100) * (100 - obj.saleProd)) *
@@ -57,11 +61,16 @@ export const dataSlice = createSlice({
         }, 0);
       }
     },
+    clearCart: (state) => {
+      state.items = [];
+      state.totalPrice = 0;
+    },
   },
 });
 
 export const getCartItems = (state: RootState) => state.cart.items;
+export const getTotalPriceItems = (state: RootState) => state.cart.totalPrice;
 
-export const { setItemsCart, delItemCart } = dataSlice.actions;
+export const { setItemsCart, delItemCart, clearCart } = dataSlice.actions;
 
 export default dataSlice.reducer;

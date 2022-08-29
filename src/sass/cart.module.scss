@@ -1,9 +1,59 @@
 .wrapper {
-  margin-top: 81px;
+  margin: 81px 0px;
   &__cart {
     font-weight: 700;
     font-size: 32px;
     line-height: 44px;
     text-transform: uppercase;
+    margin-right: 20px;
   }
+}
+.namePage {
+  display: flex;
+  align-items: center;
+  margin-bottom: 39px;
+}
+.emptyCart {
+  height: 150px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  font-weight: 600;
+}
+.emptyCartText {
+  font-size: 40px;
+  line-height: 27px;
+  margin-bottom: 20px;
+}
+.toCatalog {
+  background: #fff8eb;
+  color: black;
+  border: 1px solid rgba(255, 169, 0, 0.45);
+  border-radius: 16px;
+  text-decoration: none;
+  padding: 10px 20px;
+}
+.toCatalog:hover {
+  background: #ffe8bc;
+}
+.InfoCart {
+  display: flex;
+}
+.totalInfo {
+  margin-left: 30px;
+}
+.clearCart {
+  font-weight: 400;
+  font-size: 14px;
+  line-height: 19px;
+  text-align: right;
+  color: #6b6b6b;
+  border: none;
+  background-color: inherit;
+  cursor: pointer;
+}
+.clearCart:hover {
+  font-weight: 600;
+  color: black;
 }

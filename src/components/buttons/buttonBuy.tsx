@@ -5,10 +5,10 @@ import {
   getCartItems,
   ItemCart,
   setItemsCart,
-} from "../redux/slices/cartSlice";
-import { useAppDispatch } from "../redux/store";
-import { propsItem } from "./listItem";
-import s from "../sass/button.module.scss";
+} from "../../redux/slices/cartSlice";
+import { useAppDispatch } from "../../redux/store";
+import { propsItem } from "../listItem";
+import s from "../../sass/button.module.scss";
 
 const ButtonBuy = ({
   price,

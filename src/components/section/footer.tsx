@@ -1,12 +1,12 @@
 import React from "react";
-import s from "../sass/footer.module.scss";
-import phone from "../assets/footer/phone.svg";
-import gazilov from "../assets/footer/gazilov.png";
-import inst from "../assets/footer/inst.png";
-import mail from "../assets/footer/mail.png";
-import masterCard from "../assets/footer/masterCard.png";
-import visa from "../assets/footer/visa.png";
-import cursor from "../assets/footer/cursor.png";
+import s from "../../sass/footer.module.scss";
+import phone from "../../assets/footer/phone.svg";
+import gazilov from "../../assets/footer/gazilov.png";
+import inst from "../../assets/footer/inst.png";
+import mail from "../../assets/footer/mail.png";
+import masterCard from "../../assets/footer/masterCard.png";
+import visa from "../../assets/footer/visa.png";
+import cursor from "../../assets/footer/cursor.png";
 const Footer = () => {
   return (
     <div className={s.wrapper}>

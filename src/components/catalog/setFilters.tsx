@@ -6,10 +6,10 @@ import {
   deleteType,
   getFilterData,
   statefilter,
-} from "../redux/slices/filterSlice";
-import { changeParamSale, gerSortData } from "../redux/slices/sortSlice";
-import { useAppDispatch } from "../redux/store";
-import s from "../sass/setFilters.module.scss";
+} from "../../redux/slices/filterSlice";
+import { changeParamSale, gerSortData } from "../../redux/slices/sortSlice";
+import { useAppDispatch } from "../../redux/store";
+import s from "../../sass/setFilters.module.scss";
 
 const SetFilters = () => {
   const dispatch = useAppDispatch();

@@ -1,9 +1,9 @@
 import React from "react";
-import { addFilterView, addType } from "../redux/slices/filterSlice";
-import { changeParamSale, gerSortData } from "../redux/slices/sortSlice";
-import { useAppDispatch } from "../redux/store";
-import s from "../sass/filters.module.scss";
-import ItemForFilters from "../assets/Json/ItemForFilters.json";
+import { addFilterView, addType } from "../../redux/slices/filterSlice";
+import { changeParamSale, gerSortData } from "../../redux/slices/sortSlice";
+import { useAppDispatch } from "../../redux/store";
+import s from "../../sass/filters.module.scss";
+import ItemForFilters from "../../assets/Json/ItemForFilters.json";
 import { useSelector } from "react-redux";
 
 const Filters: React.FC = () => {

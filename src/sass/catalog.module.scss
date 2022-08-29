@@ -41,6 +41,7 @@
 }
 .SelectFilter {
   min-height: 100px;
+  width: 948px;
 }
 .popup {
   position: absolute;
@@ -70,9 +71,6 @@
 }
 .ascDescRotate {
   transform: rotate(90deg);
-}
-.itemsFiltersSet {
-  width: 100%;
 }
 .warn {
   font-size: 20px;

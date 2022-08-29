@@ -1,11 +1,11 @@
 import React from "react";
-import ItemForFilters from "../assets/Json/ItemForFilters.json";
+import ItemForFilters from "../../assets/Json/ItemForFilters.json";
 import { Link } from "react-router-dom";
-import { useAppDispatch } from "../redux/store";
+import { useAppDispatch } from "../../redux/store";
 import {
   addFilterView,
   deleteAllFilterView,
-} from "../redux/slices/filterSlice";
+} from "../../redux/slices/filterSlice";
 
 type propsInfo = {
   classProduct: string;
@@ -25,7 +25,7 @@ const BlocksInfoMain = ({ classProduct }: propsInfo) => {
     switch (classProduct) {
       case "Супермаркет":
         let contextImgShop = require.context(
-          `../assets/mainBlocksCategory/supermarket/`,
+          `../../assets/mainBlocksCategory/supermarket/`,
           false
         );
         const pathsShop = contextImgShop.keys();
@@ -35,7 +35,7 @@ const BlocksInfoMain = ({ classProduct }: propsInfo) => {
         break;
       case "Кулинария":
         let contextImgKithen = require.context(
-          `../assets/mainBlocksCategory/Kitchen/`,
+          `../../assets/mainBlocksCategory/Kitchen/`,
           false
         );
         const pathsKithen = contextImgKithen.keys();
@@ -45,7 +45,7 @@ const BlocksInfoMain = ({ classProduct }: propsInfo) => {
         break;
       case "Заморозка":
         let contextImgFreeze = require.context(
-          `../assets/mainBlocksCategory/Freeze/`,
+          `../../assets/mainBlocksCategory/Freeze/`,
           false
         );
         const pathsFreeze = contextImgFreeze.keys();
@@ -54,7 +54,7 @@ const BlocksInfoMain = ({ classProduct }: propsInfo) => {
         break;
       case "Другое":
         let contextImgAnother = require.context(
-          `../assets/mainBlocksCategory/Another/`,
+          `../../assets/mainBlocksCategory/Another/`,
           false
         );
         const pathsAnother = contextImgAnother.keys();

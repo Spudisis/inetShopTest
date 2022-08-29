@@ -1,0 +1,119 @@
+.block {
+  display: grid;
+  justify-content: left;
+  grid-template-columns: 170px 330px 100px 100px 120px;
+  margin-bottom: 18px;
+}
+
+.imgItem {
+  width: 130px;
+  height: 130px;
+  border-radius: 20px;
+  position: relative;
+  background: #fff8eb;
+  border: 1px solid #ffe7b9;
+  img {
+    margin: 0 auto;
+    height: 100%;
+  }
+}
+.NameCount {
+  width: 292px;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  &__Name {
+    font-weight: 600;
+    font-size: 20px;
+    line-height: 27px;
+  }
+  &__Count {
+    font-weight: 400;
+    font-size: 14px;
+    line-height: 19px;
+    color: #434343;
+  }
+}
+.saleBlockImg {
+  position: absolute;
+  background-color: #ff0000;
+  border-radius: 20px 0px;
+  top: 0;
+  left: 0;
+  width: 42px;
+  height: 31px;
+  &__percent {
+    position: inherit;
+    left: 15px;
+    top: 4px;
+    font-size: 15px;
+  }
+}
+.salePrice {
+  font-weight: 600;
+  font-size: 24px;
+  color: #cf0000;
+}
+.price {
+  font-weight: 400;
+  font-size: 14px;
+  margin-left: 20px;
+  line-height: 19px;
+  text-decoration-line: line-through;
+  color: #434343;
+}
+.priceNonSale {
+  font-weight: 600;
+  font-size: 20px;
+  line-height: 27px;
+}
+.ItemCartCount {
+  display: flex;
+  align-items: center;
+  justify-content: space-around;
+  height: 42px;
+  min-width: 109px;
+  background: #fff8eb;
+  border: 1px solid #ffe7b9;
+  border-radius: 58px;
+  button {
+    color: #ffa900;
+    border: none;
+    width: 25px;
+    height: 25px;
+    background-color: inherit;
+    vertical-align: middle;
+    border-radius: 50%;
+    font-weight: 700;
+    font-size: 16px;
+    line-height: 22px;
+  }
+  button:hover {
+    background: #ffa900;
+    color: white;
+  }
+}
+
+.chooseCount {
+  text-align: center;
+  font-weight: 700;
+  font-size: 16px;
+  line-height: 22px;
+  color: #ffa900;
+}
+.priceTotal {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-end;
+  div:first-child {
+    font-weight: 600;
+    font-size: 20px;
+    line-height: 27px;
+  }
+  div:last-child {
+    font-weight: 400;
+    font-size: 14px;
+    line-height: 19px;
+    text-align: right;
+  }
+}

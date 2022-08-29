@@ -1,11 +1,11 @@
 import React from "react";
-import s from "../sass/main.module.scss";
+import s from "../../sass/main.module.scss";
 import { Link } from "react-router-dom";
-import { useAppDispatch } from "../redux/store";
-import { changeParamSale } from "../redux/slices/sortSlice";
-import { addFilterView, addType } from "../redux/slices/filterSlice";
+import { useAppDispatch } from "../../redux/store";
+import { changeParamSale } from "../../redux/slices/sortSlice";
+import { addFilterView, addType } from "../../redux/slices/filterSlice";
 import { useSelector } from "react-redux";
-import ItemForFilters from "../assets/Json/ItemForFilters.json";
+import ItemForFilters from "../../assets/Json/ItemForFilters.json";
 type propBlockName = {
   name: string;
 };

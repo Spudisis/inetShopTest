@@ -4,9 +4,7 @@ import ContentLoader from "react-content-loader";
 const Skeleton: React.FC = () => (
   <ContentLoader
     style={{
-      marginBottom: 50 + "px",
-      marginLeft: 40 + "px",
-      marginTop: 25 + "px",
+      margin: 5 + "px",
     }}
     speed={2}
     width={304}

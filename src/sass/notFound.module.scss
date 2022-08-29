@@ -1,0 +1,42 @@
+.wrapper {
+  height: 630px;
+  display: flex;
+  align-items: flex-start;
+  justify-content: center;
+  flex-direction: column;
+  margin: 0 auto;
+  width: 642px;
+  a {
+    text-decoration: none;
+  }
+}
+.text {
+  font-weight: 400;
+  font-size: 20px;
+  line-height: 27px;
+  color: #6b6b6b;
+}
+.error404 {
+  display: flex;
+  span {
+    font-weight: 700;
+    font-size: 240.571px;
+    line-height: 328px;
+    color: #6b6b6b;
+  }
+}
+.buttons {
+  margin-top: 20px;
+  display: flex;
+}
+.mainPageLink {
+  border: 1px solid #ff0000;
+  border-radius: 31px;
+  padding: 5px 10px;
+  font-weight: 700;
+  text-decoration: none;
+  font-size: 16px;
+  line-height: 35px;
+  color: #ff0000;
+  margin-right: 20px;
+}

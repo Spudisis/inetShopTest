@@ -1,19 +1,10 @@
 import React from "react";
 import s from "../sass/listItem.module.scss";
-import like from "../assets/like.png";
 import { useAppDispatch } from "../redux/store";
-import {
-  addLikeProduct,
-  deleteLikeProduct,
-  getItemsLike,
-} from "../redux/slices/likeItems";
+import { getItemsLike } from "../redux/slices/likeItems";
 import { useSelector } from "react-redux";
-import {
-  getCartItems,
-  ItemCart,
-  setItemsCart,
-} from "../redux/slices/cartSlice";
-import ButtonBuy from "./buttonBuy";
+import ButtonBuy from "./buttons/buttonBuy";
+import LikeButton from "./buttons/likeButton";
 
 export interface propsItem {
   nameProd: string;
@@ -38,34 +29,14 @@ const ListItem = ({
   classProduct,
   saleProd,
 }: propsItem) => {
-  const itemsLike: propsItem[] = useSelector(getItemsLike);
-
-  const dispatch = useAppDispatch();
-
-  const [style, setStyle] = React.useState(
-    like === "yes" ? s.likeActive : s.like
-  );
-
   const [priceSale, setPriceSale] = React.useState(0);
 
   React.useEffect(() => {
-    itemsLike.length &&
-      itemsLike.map((obj) => obj.id === id && setStyle(s.likeActive));
     saleProd && setPriceSale(calcSalePrice());
   }, []);
 
   const calcSalePrice = () => {
     return Math.ceil((price / 100) * (100 - saleProd));
-  };
-
-  const onClickLike = (prop: propsItem) => {
-    if (style === s.like) {
-      setStyle(s.likeActive);
-      dispatch(addLikeProduct(prop));
-    } else {
-      setStyle(s.like);
-      dispatch(deleteLikeProduct(prop.id));
-    }
   };
 
   return (
@@ -78,22 +49,18 @@ const ListItem = ({
         ) : (
           ""
         )}
-        <button
-          className={style}
-          onClick={() =>
-            onClickLike({
-              price,
-              title,
-              count,
-              weight,
-              imageUrl,
-              classProduct,
-              id,
-              nameProd,
-              saleProd,
-            })
-          }
-        ></button>
+        <LikeButton
+          id={id}
+          price={price}
+          title={title}
+          count={count}
+          weight={weight}
+          imageUrl={imageUrl}
+          classProduct={classProduct}
+          nameProd={nameProd}
+          saleProd={saleProd}
+          key={id + "like"}
+        />
         <img src={imageUrl} alt="product" />
       </div>
       <div className={s.info}>

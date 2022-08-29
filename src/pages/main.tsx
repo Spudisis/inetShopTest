@@ -1,6 +1,6 @@
 import React from "react";
 import s from "../sass/main.module.scss";
-import Slider from "../components/slider";
+import Slider from "../components/main/slider";
 import list from "../sass/listItem.module.scss";
 import { useAppDispatch } from "../redux/store";
 import { useSelector } from "react-redux";
@@ -9,9 +9,9 @@ import {
   getSaleItemsSl,
   ItemsTypeSale,
 } from "../redux/slices/itemsSale";
-import ListItem from "../components/listItem";
-import BlockNameMain from "../components/BlockNameMain";
-import BlocksInfoMain from "../components/BlocksInfoMain";
+import BlockNameMain from "../components/main/BlockNameMain";
+import BlocksInfoMain from "../components/main/BlocksInfoMain";
+import SaleItems from "../components/cart/saleItems";
 const Main: React.FC = () => {
   const dispatch = useAppDispatch();
   const { saleItems, loading }: ItemsTypeSale = useSelector(getSaleItemsSl);
@@ -23,41 +23,7 @@ const Main: React.FC = () => {
     <div>
       <Slider />
       <div className={s.blocksTypesProduct}>
-        <div className={s.block}>
-          <div className={s.saleBlockName}>
-            <BlockNameMain name="Скидки" />
-            <div className={s.navigateSaleProduct}>
-              <button
-                onClick={() => setPage(page - 4)}
-                disabled={page === 0 ? true : false}
-              >
-                &#60;
-              </button>
-              <button
-                onClick={() => setPage(page + 4)}
-                disabled={page + 4 >= saleItems.length - 1 ? true : false}
-              >
-                &#62;
-              </button>
-            </div>
-          </div>
-          <div className={s.listSale}>
-            {saleItems.slice(page, page + 4).map((obj) => (
-              <ListItem
-                id={obj.id}
-                price={obj.price}
-                title={obj.title}
-                count={obj.count}
-                weight={obj.weight}
-                imageUrl={obj.imageUrl}
-                classProduct={obj.class}
-                nameProd={obj.name}
-                saleProd={obj.sale}
-                key={obj.id + "listSale"}
-              />
-            ))}
-          </div>
-        </div>
+        <SaleItems />
         <div className={s.block}>
           <BlockNameMain name="Супермаркет" />
           <div className={s.wrapperInfoBlocks}>
