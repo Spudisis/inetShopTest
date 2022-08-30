@@ -8,19 +8,22 @@ import s from "../sass/cart.module.scss";
 import TotalInfoCart from "../components/cart/TotalInfoCart";
 import BlocksInfoMain from "../components/main/BlocksInfoMain";
 import SaleItems from "../components/main/saleItems";
+import { fetchSaleMock, getSaleItemsSl, ItemsTypeSale } from "../redux/slices/itemsSaleSlice";
+
 const Cart = () => {
   const items = useSelector(getCartItems);
   const dispatch = useAppDispatch();
+  const { saleItems, loading }: ItemsTypeSale = useSelector(getSaleItemsSl);
+  React.useEffect(() => {
+    saleItems.length === 0 && dispatch(fetchSaleMock());
+  }, []);
   return (
     <>
       <div className={s.wrapper}>
         <div className={s.namePage}>
           <h2 className={s.wrapper__cart}>Корзина</h2>
           {items.length !== 0 && (
-            <button
-              className={s.clearCart}
-              onClick={() => dispatch(clearCart())}
-            >
+            <button className={s.clearCart} onClick={() => dispatch(clearCart())}>
               Очистить корзину
             </button>
           )}

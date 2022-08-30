@@ -1,9 +1,9 @@
 .container {
-  height: 95%;
-  width: 90%;
+  min-height: 95%;
+  width: 304px;
   display: flex;
   flex-direction: column;
-
+  margin-bottom: 20px;
   border-radius: 20px;
   border: 1px solid #dadada;
 }
@@ -21,7 +21,6 @@
 }
 .like {
   margin: 5px;
-  background-color: #fff;
   border: none;
   top: 5%;
   left: 83%;
@@ -29,10 +28,10 @@
   width: 22px;
   height: 20px;
   background-image: url("../assets/like.png");
+  background-color: rgba(1, 1, 1, 0);
 }
 .likeActive {
   margin: 5px;
-  background-color: #fff;
   border: none;
   top: 5%;
   left: 83%;
@@ -40,6 +39,7 @@
   width: 22px;
   height: 20px;
   background-image: url("../assets/activeLike.png");
+  background-color: rgba(1, 1, 1, 0);
 }
 .info {
   height: 186px;
@@ -112,9 +112,9 @@
   height: 36px;
   &__percent {
     position: inherit;
-    left: 15px;
-    top: 4px;
-    font-size: 20px;
+    left: 9px;
+    top: 5px;
+    font-size: 17px;
   }
 }
 .counterBuy {

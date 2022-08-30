@@ -1,7 +1,6 @@
 import React from "react";
 import s from "../sass/main.module.scss";
 import Slider from "../components/main/slider";
-import list from "../sass/listItem.module.scss";
 import { useAppDispatch } from "../redux/store";
 import { useSelector } from "react-redux";
 import { fetchSaleMock, getSaleItemsSl, ItemsTypeSale } from "../redux/slices/itemsSaleSlice";

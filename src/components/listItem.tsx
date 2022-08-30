@@ -1,8 +1,5 @@
 import React from "react";
 import s from "../sass/listItem.module.scss";
-import { useAppDispatch } from "../redux/store";
-import { getItemsLike } from "../redux/slices/likeItemsSlice";
-import { useSelector } from "react-redux";
 import ButtonBuy from "./buttons/buttonBuy";
 import LikeButton from "./buttons/likeButton";
 
@@ -44,7 +41,7 @@ const ListItem: React.FC<propsItem> = ({
       <div className={s.img}>
         {saleProd ? (
           <div className={s.saleBlockImg}>
-            <div className={s.saleBlockImg__percent}>%</div>
+            <div className={s.saleBlockImg__percent}>{saleProd}%</div>
           </div>
         ) : (
           ""
@@ -70,7 +67,7 @@ const ListItem: React.FC<propsItem> = ({
         </div>
         <div className={s.title}>
           {nameProd}, {title}, {weight}&nbsp;
-          {classProduct === "water" ? "Л" : classProduct === "milk" ? "Л" : "гр."}
+          {classProduct === "water" ? "Л" : classProduct === "milk" ? "Л" : classProduct === "oil" ? "Л" : "гр."}
         </div>
         <div className={s.bottomCard}>
           <div className={s.priceBottom}>

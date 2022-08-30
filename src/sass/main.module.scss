@@ -1,6 +1,7 @@
 .wrapperItems {
   display: grid;
-  grid-template-columns: 1fr 1fr 1fr;
+  grid-template-columns: repeat(3, 1fr);
+
   justify-items: center;
 }
 .listSale {
@@ -187,5 +188,11 @@
   }
   .saleBlockName {
     flex-direction: column;
+  }
+  .wrapperInfoBlocks {
+    div {
+      width: 98%;
+      margin: 10px auto;
+    }
   }
 }

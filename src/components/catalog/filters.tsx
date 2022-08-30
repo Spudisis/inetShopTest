@@ -14,8 +14,7 @@ const Filters = () => {
   const SendFilterType = (type: string) => {
     dispatch(addType(type));
     ItemForFilters.map((elem) => {
-      elem.type === type &&
-        dispatch(() => ChangeClassProduct(elem.class, elem.classForPerson));
+      elem.type === type && dispatch(() => ChangeClassProduct(elem.class, elem.classForPerson));
     });
   };
   const ChangeClassProduct = (classT: string, classForPerson: string) => {
@@ -34,10 +33,7 @@ const Filters = () => {
     return ItemForFilters.map(
       (obj, index) =>
         obj.type === type && (
-          <li
-            onClick={() => ChangeClassProduct(obj.class, obj.classForPerson)}
-            key={index + type}
-          >
+          <li onClick={() => ChangeClassProduct(obj.class, obj.classForPerson)} key={index + type + obj.class}>
             {obj.classForPerson}
           </li>
         )
@@ -49,12 +45,7 @@ const Filters = () => {
       <div className={s.filtersParams}>
         <h3 className={s.firstBlockParam}>Особенности</h3>
         <div>
-          <input
-            type="checkbox"
-            id={id + "1"}
-            checked={saleYes}
-            onChange={() => {}}
-          />
+          <input type="checkbox" id={id + "1"} checked={saleYes} onChange={() => {}} />
           <label htmlFor={id + "1"} onClick={() => setSaleYes(!saleYes)}>
             Со скидкой
           </label>
@@ -71,10 +62,7 @@ const Filters = () => {
       <div className={s.filtersParams}>
         <h3 className={s.secondBlockParam}>Каталог</h3>
         <div>
-          <h4
-            className={s.firstThemeCatalog}
-            onClick={() => SendFilterType("Кулинария")}
-          >
+          <h4 className={s.firstThemeCatalog} onClick={() => SendFilterType("Кулинария")}>
             Кулинария
           </h4>
           <ol>{renderFilterParams("Кулинария")}</ol>
@@ -83,8 +71,8 @@ const Filters = () => {
           <h4 onClick={() => SendFilterType("Супермаркет")}>Супермаркет</h4>
           <ol>{renderFilterParams("Супермаркет")}</ol>
         </div>
-        <div onClick={() => SendFilterType("Заморозка")}>
-          <h4>Заморозка</h4>
+        <div>
+          <h4 onClick={() => SendFilterType("Заморозка")}>Заморозка</h4>
           <ol>{renderFilterParams("Заморозка")}</ol>
         </div>
         <div>
