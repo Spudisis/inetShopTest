@@ -5,11 +5,9 @@ import LikePage from "./LikePage";
 import Person from "./Person";
 import s from "../sass/profile.module.scss";
 import { NavLink } from "react-router-dom";
-import { getPage, setPageSls } from "../redux/slices/profilePages";
+import { getPage, setPageSls } from "../redux/slices/pageSlice";
 
-
-
-const Profile: React.FC = () => {
+const Profile = () => {
   const dispatch = useAppDispatch();
   const { page } = useSelector(getPage);
 
@@ -43,9 +41,7 @@ const Profile: React.FC = () => {
           Избранное
         </NavLink>
       </div>
-      <div>
-        {page === "like" ? <LikePage /> : page === "person" ? <Person /> : "no"}
-      </div>
+      <div>{page === "like" ? <LikePage /> : page === "person" ? <Person /> : "no"}</div>
     </div>
   );
 };

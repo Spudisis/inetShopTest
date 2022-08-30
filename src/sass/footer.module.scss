@@ -5,6 +5,7 @@
   justify-content: center;
   align-items: center;
   flex-direction: column;
+  overflow: hidden;
 }
 .content {
   width: 1291px;
@@ -133,6 +134,7 @@
     font-weight: 600;
     font-size: 14px;
     color: rgba(255, 255, 255, 0.5);
+    cursor: pointer;
   }
   &__acceptSubcsribe {
     margin-top: 10px;
@@ -159,6 +161,13 @@
 @media screen and (max-width: 1310px) {
   .bottom_info {
     width: 240px;
+  }
+  .twinBlock__info {
+    width: 50%;
+  }
+  .twinBlock__info:first-child {
+    margin-left: 10px;
+    margin-right: 10px;
   }
   .content {
     max-width: 1000px;
@@ -233,7 +242,7 @@
       align-items: center;
       justify-content: center;
       input {
-        margin-bottom: 10px;
+        padding: 0px;
         margin-right: 0px;
       }
     }
@@ -255,5 +264,30 @@
   }
   .content {
     max-width: 330px;
+  }
+}
+@media screen and (max-width: 350px) {
+  .twinBlock__info:first-child {
+    margin-left: 0px;
+  }
+  .twinBlock {
+    flex-direction: column;
+    align-items: center;
+    &__info {
+      margin-bottom: 15px;
+    }
+  }
+  .subscribe {
+    align-items: center;
+    &__acceptSubcsribe {
+      text-align: center;
+      width: 200px;
+      margin: 0 auto;
+    }
+  }
+  .subscribe__buttons {
+    input {
+      margin: 10px 0px;
+    }
   }
 }

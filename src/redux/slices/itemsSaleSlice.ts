@@ -2,7 +2,7 @@ import { createSlice, createAsyncThunk, PayloadAction } from "@reduxjs/toolkit";
 import axios from "axios";
 
 import { RootState } from "../store";
-import { Item, Status } from "./items";
+import { Item, Status } from "./itemsSlice";
 
 export const fetchSaleMock = createAsyncThunk<Item[]>(
   `items/fetchItemsSale`,

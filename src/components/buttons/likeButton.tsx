@@ -7,9 +7,9 @@ import {
   addLikeProduct,
   deleteLikeProduct,
   getItemsLike,
-} from "../../redux/slices/likeItems";
+} from "../../redux/slices/likeItemsSlice";
 import { useAppDispatch } from "../../redux/store";
-const LikeButton = ({
+const LikeButton: React.FC<propsItem> = ({
   price,
   title,
   count,
@@ -19,7 +19,7 @@ const LikeButton = ({
   id,
   nameProd,
   saleProd,
-}: propsItem) => {
+}) => {
   const [style, setStyle] = React.useState(
     like === "yes" ? s.likeActive : s.like
   );

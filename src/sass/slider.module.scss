@@ -1,16 +1,17 @@
 .Information {
-  height: 460px;
+  height: 100%;
+
   margin-top: 54px;
   display: flex;
   &__slider {
     height: 100%;
-    width: 862px;
+    width: 70%;
     border-radius: 26px;
   }
   &__blocks {
-    margin-left: 24px;
-    height: 100%;
-    width: 404px;
+    margin-left: 12px;
+    min-height: 100%;
+    width: 30%;
     display: flex;
     flex-direction: column;
     justify-content: space-between;
@@ -20,65 +21,45 @@
   }
 }
 
-@media screen and (max-width: 1310px) {
-  .Information {
-    justify-content: center;
-    height: 100%;
-    margin: 20px auto;
-    width: 1010px;
-    &__slider {
-      height: 100%;
-      width: 600px;
-    }
-    &__blocks {
-      height: 100%;
-      width: 300px;
-    }
-  }
-}
-@media screen and (max-width: 1010px) {
+@media screen and (max-width: 1250px) {
   .Information {
     flex-direction: column;
-    align-items: center;
-    height: 100%;
-    max-width: 1010px;
+
     &__slider {
-      height: 100%;
-      width: 500px;
+      width: 100%;
     }
     &__blocks {
-      margin-top: 20px;
+      margin-top: 4%;
       margin-left: 0px;
-
-      height: 100%;
-      width: 500px;
+      min-width: 100%;
       flex-direction: row;
-      &__cashsale:first-child {
-        margin-right: 20px;
+      &__cashsale {
+        width: 48%;
       }
     }
   }
 }
-
-@media screen and (max-width: 530px) {
+@media screen and (max-width: 630px) {
   .Information {
-    flex-direction: column;
-    align-items: center;
-    height: 100%;
-    max-width: 530px;
+    margin-top: 25px;
+  }
+}
+
+@media screen and (max-width: 390px) {
+  .Information {
+    width: 90%;
+    margin: 0 auto;
+    margin-top: 20px;
     &__slider {
-      height: 100%;
-      width: 320px;
+      width: 100%;
     }
     &__blocks {
-      margin-top: 10px;
+      margin-top: 1%;
       margin-left: 0px;
-
-      height: 100%;
-      width: 320px;
+      min-width: 100%;
       flex-direction: row;
-      &__cashsale:first-child {
-        margin-right: 10px;
+      &__cashsale {
+        width: 49.5%;
       }
     }
   }

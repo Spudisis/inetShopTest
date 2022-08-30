@@ -108,3 +108,84 @@
     border: 1px solid #ffa900;
   }
 }
+.buttonSaleNavigateShow {
+  display: block;
+}
+.buttonSaleNavigateHidden {
+  display: none;
+}
+@media screen and (max-width: 1250px) {
+  .wrapperInfoBlocks {
+    grid-template-columns: 1fr 1fr;
+  }
+  .listSale {
+    grid-template-columns: 1fr 1fr;
+    margin-bottom: 100px;
+  }
+  .blocksTypesProduct {
+    margin-top: 50px;
+  }
+}
+@media screen and (max-width: 630px) {
+  .hBlockName {
+    h2 {
+      font-weight: 700;
+      font-size: 32px;
+      line-height: 44px;
+      margin-right: 29px;
+    }
+    button {
+      background: #fff8eb;
+      border: 1px solid #ffe7b9;
+      border-radius: 16px;
+      font-weight: 700;
+      font-size: 13px;
+      line-height: 25px;
+      height: 46px;
+      padding: 0px 17px;
+      color: #da9000;
+      cursor: pointer;
+    }
+  }
+  .wrapperInfoBlocks {
+    grid-template-columns: 1fr;
+  }
+  .listSale {
+    grid-template-columns: 1fr;
+    margin-bottom: 50px;
+  }
+  .buttonSaleNavigateShow {
+    display: none;
+  }
+  .buttonSaleNavigateHidden {
+    display: block;
+    width: 100%;
+  }
+  .navigateSaleProduct {
+    width: 95%;
+    margin: 0 auto;
+    button {
+      font-size: 30px;
+      font-weight: 700;
+      height: 100%;
+      width: 50%;
+      border-radius: 0px 16px 16px 0px;
+    }
+    button:first-child {
+      border-radius: 16px 0px 0px 16px;
+    }
+  }
+}
+@media screen and (max-width: 350px) {
+  .hBlockName {
+    flex-direction: column;
+    align-items: center;
+    h2 {
+      margin: 0px;
+      margin-bottom: 10px;
+    }
+  }
+  .saleBlockName {
+    flex-direction: column;
+  }
+}

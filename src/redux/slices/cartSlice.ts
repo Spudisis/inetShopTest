@@ -1,7 +1,7 @@
 import { createSlice, createAsyncThunk, PayloadAction } from "@reduxjs/toolkit";
 import { propsItem } from "../../components/listItem";
 import { RootState } from "../store";
-import { Item } from "./items";
+import { Item } from "./itemsSlice";
 
 export type ItemCart = {
   nameProd: string;

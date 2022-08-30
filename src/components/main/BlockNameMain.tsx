@@ -21,8 +21,7 @@ const BlockNameMain = ({ name }: propBlockName) => {
   const SendFilterType = (type: string) => {
     dispatch(addType(type));
     ItemForFilters.map((elem) => {
-      elem.type === type &&
-        dispatch(() => ChangeClassProduct(elem.class, elem.classForPerson));
+      elem.type === type && dispatch(() => ChangeClassProduct(elem.class, elem.classForPerson));
     });
   };
   const ChangeClassProduct = (classT: string, classForPerson: string) => {

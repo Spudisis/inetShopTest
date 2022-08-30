@@ -12,25 +12,28 @@ import Cart from "./pages/cart";
 import NotFound from "./pages/notFound";
 
 function App() {
+  
   return (
-    <div className="container">
-      <header className="header">
-        <Header />
-      </header>
-      <main className="main">
-        <Navigation />
-        <Routes>
-          <Route path="" element={<Main />} />
-          <Route path="/profile" element={<Profile />} />
-          <Route path="/catalog" element={<Catalog />} />
-          <Route path="/cart" element={<Cart />} />
-          <Route path="*" element={<NotFound />} />
-        </Routes>
-      </main>
+    <>
+      <div className="container">
+        <header className="header">
+          <Header />
+        </header>
+        <main className="main">
+          <Navigation />
+          <Routes>
+            <Route path="" element={<Main />} />
+            <Route path="/profile" element={<Profile />} />
+            <Route path="/catalog" element={<Catalog />} />
+            <Route path="/cart" element={<Cart />} />
+            <Route path="*" element={<NotFound />} />
+          </Routes>
+        </main>
+      </div>
       <footer className="footer">
         <Footer />
       </footer>
-    </div>
+    </>
   );
 }
 

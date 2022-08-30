@@ -1,5 +1,6 @@
 .container {
-  max-width: 1920px;
+  max-width: 1291px;
+  margin: 0px auto;
   background-color: #ffffff;
   font-family: "Nunito";
   font-style: normal;
@@ -10,13 +11,14 @@
 }
 
 .header {
-  min-width: 100%;
+  width: 100%;
   height: 100%;
   margin: 31px 0px 18px;
 }
 .main {
   min-height: 60vh;
-  width: 1291px;
+  width: 100%;
+  margin: 0px auto;
 }
 .footer {
   min-width: 100%;
@@ -26,4 +28,14 @@
 body {
   font-family: "Nunito";
   font-style: normal;
+}
+@media screen and (max-width: 1250px) {
+  .container {
+    max-width: 700px;
+  }
+}
+@media screen and (max-width: 630px) {
+  .container {
+    max-width: 360px;
+  }
 }

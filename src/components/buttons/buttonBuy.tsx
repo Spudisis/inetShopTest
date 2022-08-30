@@ -10,7 +10,7 @@ import { useAppDispatch } from "../../redux/store";
 import { propsItem } from "../listItem";
 import s from "../../sass/button.module.scss";
 
-const ButtonBuy = ({
+const ButtonBuy: React.FC<propsItem> = ({
   price,
   title,
   count,
@@ -20,7 +20,7 @@ const ButtonBuy = ({
   id,
   nameProd,
   saleProd,
-}: propsItem) => {
+}) => {
   const [haveCart, setHaveCart] = React.useState(false);
   const [countCart, setCountCart] = React.useState(0);
   const dispatch = useAppDispatch();

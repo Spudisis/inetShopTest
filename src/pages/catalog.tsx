@@ -5,14 +5,7 @@ import Skeleton from "../components/skeleton";
 import { useAppDispatch } from "../redux/store";
 import s from "../sass/catalog.module.scss";
 import Filters from "../components/catalog/filters";
-import {
-  fetchProductMock,
-  getDataItems,
-  Item,
-  ItemsType,
-  setItems,
-  Status,
-} from "../redux/slices/items";
+import { fetchProductMock, getDataItems, Item, ItemsType, setItems, Status } from "../redux/slices/itemsSlice";
 import { getFilterData, statefilter } from "../redux/slices/filterSlice";
 import { gerSortData, stateSort } from "../redux/slices/sortSlice";
 import SetFilters from "../components/catalog/setFilters";
@@ -26,11 +19,10 @@ export type filter = {
   sale: boolean;
 };
 
-const Catalog: React.FC = () => {
+const Catalog = () => {
   const dispatch = useAppDispatch();
   const { items, itemsDop, loading }: ItemsType = useSelector(getDataItems);
-  const { search, filterBy, ascDesc, filtersView, type }: statefilter =
-    useSelector(getFilterData);
+  const { search, filterBy, ascDesc, filtersView, type }: statefilter = useSelector(getFilterData);
   const { sale }: stateSort = useSelector(gerSortData);
   const fetchData = () => {
     dispatch(fetchProductMock({ search, filterBy, ascDesc, type, sale }));
@@ -112,9 +104,7 @@ const Catalog: React.FC = () => {
             ) : loading === Status.ERROR ? (
               <div className={s.warn}>Произошла ошибка</div>
             ) : itemsDop.length === 0 ? (
-              <div className={s.warn}>
-                Попробуйте другие параметры для поиска
-              </div>
+              <div className={s.warn}>Попробуйте другие параметры для поиска</div>
             ) : sale ? (
               itemRenderSale
             ) : (

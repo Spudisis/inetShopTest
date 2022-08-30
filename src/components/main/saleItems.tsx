@@ -1,35 +1,25 @@
 import React from "react";
 import { useSelector } from "react-redux";
-import { getSaleItemsSl, ItemsTypeSale } from "../../redux/slices/itemsSale";
+import { getSaleItemsSl, ItemsTypeSale } from "../../redux/slices/itemsSaleSlice";
 import { useAppDispatch } from "../../redux/store";
-import BlockNameMain from "../main/BlockNameMain";
+import BlockNameMain from "./BlockNameMain";
 import ListItem from "../listItem";
 import s from "../../sass/main.module.scss";
+import { getPage, pages } from "../../redux/slices/pageSlice";
+import ButtonSaleNavigate from "../buttons/buttonNavigateSale";
 const SaleItems = () => {
-  const dispatch = useAppDispatch();
   const { saleItems, loading }: ItemsTypeSale = useSelector(getSaleItemsSl);
-  const [page, setPage] = React.useState(0);
+  const { salePageCounter }: pages = useSelector(getPage);
   return (
     <div className={s.block}>
       <div className={s.saleBlockName}>
         <BlockNameMain name="Скидки" />
-        <div className={s.navigateSaleProduct}>
-          <button
-            onClick={() => setPage(page - 4)}
-            disabled={page === 0 ? true : false}
-          >
-            &#60;
-          </button>
-          <button
-            onClick={() => setPage(page + 4)}
-            disabled={page + 4 >= saleItems.length - 1 ? true : false}
-          >
-            &#62;
-          </button>
+        <div className={s.buttonSaleNavigateShow}>
+          <ButtonSaleNavigate />
         </div>
       </div>
       <div className={s.listSale}>
-        {saleItems.slice(page, page + 4).map((obj) => (
+        {saleItems.slice(salePageCounter, salePageCounter + 4).map((obj) => (
           <ListItem
             id={obj.id}
             price={obj.price}
@@ -43,6 +33,9 @@ const SaleItems = () => {
             key={obj.id + "listSale"}
           />
         ))}
+        <div className={s.buttonSaleNavigateHidden}>
+          <ButtonSaleNavigate />
+        </div>
       </div>
     </div>
   );

@@ -6,11 +6,6 @@ import { debounce } from "lodash";
 const Search: React.FC = () => {
   const dispatch = useAppDispatch();
 
-  // const debunceSearch = React.useRef(
-  //   debounce(async (value) => {
-  //     dispatch(addSearch(value));
-  //   }, 500)
-  // ).current;
   const debouncedSearch = debounce(async (value) => {
     dispatch(addSearch(await value));
   }, 250);
@@ -21,11 +16,7 @@ const Search: React.FC = () => {
 
   return (
     <div>
-      <input
-        placeholder="Поиск товаров"
-        className={s.blockSearch}
-        onChange={(e) => handleChange(e.target.value)}
-      />
+      <input placeholder="Поиск товаров" className={s.blockSearch} onChange={(e) => handleChange(e.target.value)} />
     </div>
   );
 };

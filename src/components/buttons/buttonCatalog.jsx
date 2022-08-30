@@ -1,6 +1,6 @@
 import React from "react";
 import { Link } from "react-router-dom";
-import s from "../../sass/header.module.scss";
+import s from "../../sass/buttonCatalog.module.scss";
 import burger from "../../assets/burger.png";
 const ButtonCatalog = () => {
   return (

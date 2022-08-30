@@ -4,63 +4,56 @@ import s from "../../sass/header.module.scss";
 import Search from "../search";
 import person from "../../assets/person.png";
 import like from "../../assets/like.png";
-import compass from "../../assets/compass.png";
+
 import shoppingCart from "../../assets/shoppingCart.svg";
 import { Link } from "react-router-dom";
 import { useAppDispatch } from "../../redux/store";
-import { setPageSls } from "../../redux/slices/profilePages";
+import { setPageSls } from "../../redux/slices/pageSlice";
 import { useSelector } from "react-redux";
 import { getTotalPriceItems } from "../../redux/slices/cartSlice";
 import ButtonCatalog from "../buttons/buttonCatalog";
-const Header: React.FC = () => {
+import ButtonDelivery from "../buttons/buttonDelivery";
+const Header = () => {
   const dispatch = useAppDispatch();
   const totalPrice = useSelector(getTotalPriceItems);
   return (
     <div className={s.wrapper}>
       <div className={s.container}>
-        <div className={s.infoSite}>
-          <div className={s.blockF}>
-            <Link to="">
-              <img src={logoSite} alt="logo" className={s.logoSite} />
-            </Link>
-            <ButtonCatalog />
-            <Search />
-          </div>
-          <div className={s.blockF}>
-            <div className={s.delivery}>
-              <div className={s.delivery__left}>
-                <img src={compass} alt="cursor" /> МСК
-              </div>
-              <div className={s.delivery__right}>
-                <p>Выберите способ получения</p>
-                <p>
-                  <b> Доставка или самовывоз</b>
-                </p>
-              </div>
-            </div>
-            <div className={s.buttons}>
-              <Link
-                to="/profile"
-                onClick={() => dispatch(setPageSls("person"))}
-              >
-                <button className={s.buttons__button}>
-                  <img src={person} alt="person" />
-                </button>
-              </Link>
-              <Link to="/profile" onClick={() => dispatch(setPageSls("like"))}>
-                <button className={s.buttons__button}>
-                  <img src={like} alt="like" />
-                </button>
-              </Link>
-            </div>
-            <Link to="/cart">
-              <div className={s.cart}>
-                <img src={shoppingCart} alt="shoppingCart" />
-                {totalPrice ? <b>{totalPrice} Руб.</b> : <b>Корзина</b>}
-              </div>
-            </Link>
-          </div>
+        <Link to="">
+          <img src={logoSite} alt="logo" className={s.logoSite} />
+        </Link>
+        <div className={s.hide1250}>
+          <ButtonCatalog />
+          <Search />
+          <ButtonDelivery />
         </div>
+        <div className={s.buttons}>
+          <Link to="/profile" onClick={() => dispatch(setPageSls("person"))}>
+            <button className={s.buttons__button}>
+              <img src={person} alt="person" />
+            </button>
+          </Link>
+          <Link to="/profile" onClick={() => dispatch(setPageSls("like"))}>
+            <button className={s.buttons__button}>
+              <img src={like} alt="like" />
+            </button>
+          </Link>
+        </div>
+        <div className={s.redButton}>
+          <div className={s.showCatalog}>
+            <ButtonCatalog />
+          </div>
+          <Link to="/cart">
+            <div className={s.cart}>
+              <img src={shoppingCart} alt="shoppingCart" />
+              {totalPrice ? <b>{totalPrice} Руб.</b> : <b>Корзина</b>}
+            </div>
+          </Link>
+        </div>
+      </div>
+      <div className={s.deliverySearch}>
+        <ButtonDelivery />
+        <Search />
       </div>
     </div>
   );

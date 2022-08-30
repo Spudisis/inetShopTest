@@ -6,7 +6,7 @@ import s from "../../sass/filters.module.scss";
 import ItemForFilters from "../../assets/Json/ItemForFilters.json";
 import { useSelector } from "react-redux";
 
-const Filters: React.FC = () => {
+const Filters = () => {
   const dispatch = useAppDispatch();
   const { sale } = useSelector(gerSortData);
   const [saleYes, setSaleYes] = React.useState(sale);

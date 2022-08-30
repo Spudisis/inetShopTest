@@ -18,3 +18,19 @@
 .blockSearch:hover {
   border: 1px solid #ff0000;
 }
+@media screen and (max-width: 1250px) {
+  .blockSearch {
+    margin-right: 0px;
+  }
+}
+@media screen and (max-width: 630px) {
+  .blockSearch {
+    margin-top: 10px;
+  }
+}
+@media screen and (max-width: 350px) {
+  .blockSearch {
+    width: 280px;
+    margin: 10px 0px 0px;
+  }
+}

@@ -1,16 +1,17 @@
 .container {
-  width: 1291px;
   margin: 0 auto;
 }
 
 .navigate {
   display: flex;
+  flex-wrap: wrap;
   a {
     text-decoration: none;
     color: black;
   }
   justify-content: left;
   &__button {
+    margin-bottom: 10px;
     padding: 0px 18px 0px 14px;
     height: 48px;
     background: #fff8eb;
@@ -27,5 +28,10 @@
   }
   &__button:hover {
     background: #ffe8bc;
+  }
+}
+@media screen and (max-width: 1250px) {
+  .navigate {
+    justify-content: center;
   }
 }

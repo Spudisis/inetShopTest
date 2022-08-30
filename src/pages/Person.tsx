@@ -1,9 +1,7 @@
-import React from 'react'
+import React from "react";
 
-const Person: React.FC = () => {
-  return (
-    <div>Person</div>
-  )
-}
+const Person = () => {
+  return <div>Person</div>;
+};
 
-export default Person
+export default Person;

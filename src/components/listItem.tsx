@@ -1,7 +1,7 @@
 import React from "react";
 import s from "../sass/listItem.module.scss";
 import { useAppDispatch } from "../redux/store";
-import { getItemsLike } from "../redux/slices/likeItems";
+import { getItemsLike } from "../redux/slices/likeItemsSlice";
 import { useSelector } from "react-redux";
 import ButtonBuy from "./buttons/buttonBuy";
 import LikeButton from "./buttons/likeButton";
@@ -18,7 +18,7 @@ export interface propsItem {
   saleProd: number;
 }
 
-const ListItem = ({
+const ListItem: React.FC<propsItem> = ({
   nameProd,
   id,
   price,
@@ -28,7 +28,7 @@ const ListItem = ({
   imageUrl,
   classProduct,
   saleProd,
-}: propsItem) => {
+}) => {
   const [priceSale, setPriceSale] = React.useState(0);
 
   React.useEffect(() => {
@@ -66,17 +66,11 @@ const ListItem = ({
       <div className={s.info}>
         <div className={s.info__priceCount}>
           <div className={s.info__priceCount__count}>В наличии {count} шт.</div>
-          <div className={s.info__priceCount__count}>
-            {saleProd ? priceSale : price} руб.
-          </div>
+          <div className={s.info__priceCount__count}>{saleProd ? priceSale : price} руб.</div>
         </div>
         <div className={s.title}>
           {nameProd}, {title}, {weight}&nbsp;
-          {classProduct === "water"
-            ? "Л"
-            : classProduct === "milk"
-            ? "Л"
-            : "гр."}
+          {classProduct === "water" ? "Л" : classProduct === "milk" ? "Л" : "гр."}
         </div>
         <div className={s.bottomCard}>
           <div className={s.priceBottom}>

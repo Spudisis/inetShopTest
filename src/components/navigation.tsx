@@ -20,8 +20,7 @@ const Navigation = () => {
   const SendFilterType = (type: string) => {
     dispatch(addType(type));
     ItemForFilters.map((elem) => {
-      elem.type === type &&
-        dispatch(() => ChangeClassProduct(elem.class, elem.classForPerson));
+      elem.type === type && dispatch(() => ChangeClassProduct(elem.class, elem.classForPerson));
     });
   };
   const ChangeClassProduct = (classT: string, classForPerson: string) => {
@@ -33,11 +32,7 @@ const Navigation = () => {
     <div className={s.container}>
       <div className={s.navigate}>
         {types.map((elem, index) => (
-          <Link
-            to="/catalog"
-            onClick={() => SendFilterType(elem)}
-            key={index + "navigation"}
-          >
+          <Link to="/catalog" onClick={() => SendFilterType(elem)} key={index + "navigation"}>
             <div className={s.navigate__button}>
               <img src={typesImg[index]} alt={typesImg[index]} />
               {elem}

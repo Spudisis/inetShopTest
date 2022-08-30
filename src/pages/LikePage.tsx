@@ -4,10 +4,10 @@ import ListItem, { propsItem } from "../components/listItem";
 import { useAppDispatch } from "../redux/store";
 import s from "../sass/LikePage.module.scss";
 import likeActive from "../assets/activeLike.png";
-import { Item } from "../redux/slices/items";
-import { getItemsLike } from "../redux/slices/likeItems";
+import { Item } from "../redux/slices/itemsSlice";
+import { getItemsLike } from "../redux/slices/likeItemsSlice";
 
-const LikePage: React.FC = () => {
+const LikePage = () => {
   const dispatch = useAppDispatch();
   const itemsLike: propsItem[] = useSelector(getItemsLike);
   return (

@@ -4,18 +4,14 @@ import Slider from "../components/main/slider";
 import list from "../sass/listItem.module.scss";
 import { useAppDispatch } from "../redux/store";
 import { useSelector } from "react-redux";
-import {
-  fetchSaleMock,
-  getSaleItemsSl,
-  ItemsTypeSale,
-} from "../redux/slices/itemsSale";
+import { fetchSaleMock, getSaleItemsSl, ItemsTypeSale } from "../redux/slices/itemsSaleSlice";
 import BlockNameMain from "../components/main/BlockNameMain";
 import BlocksInfoMain from "../components/main/BlocksInfoMain";
-import SaleItems from "../components/cart/saleItems";
-const Main: React.FC = () => {
+import SaleItems from "../components/main/saleItems";
+const Main = () => {
   const dispatch = useAppDispatch();
   const { saleItems, loading }: ItemsTypeSale = useSelector(getSaleItemsSl);
-  const [page, setPage] = React.useState(0);
+
   React.useEffect(() => {
     saleItems.length === 0 && dispatch(fetchSaleMock());
   }, []);
@@ -42,7 +38,6 @@ const Main: React.FC = () => {
             <BlocksInfoMain classProduct="Заморозка" />
           </div>
         </div>
-
         <div className={s.block}>
           <BlockNameMain name="Другое" />
           <div className={s.wrapperInfoBlocks}>
