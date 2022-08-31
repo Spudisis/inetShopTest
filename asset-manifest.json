@@ -1,7 +1,7 @@
 {
   "files": {
-    "main.css": "/inetShopTest/static/css/main.58508948.css",
-    "main.js": "/inetShopTest/static/js/main.b092292c.js",
+    "main.css": "/inetShopTest/static/css/main.eea84633.css",
+    "main.js": "/inetShopTest/static/js/main.a60a5036.js",
     "static/media/slider1.svg": "/inetShopTest/static/media/slider1.4b0eecde3a0f552eca488a1e2a0a7549.svg",
     "static/media/6bread.svg": "/inetShopTest/static/media/6bread.71ed8d63ac0028ca17f9.svg",
     "static/media/3grill.svg": "/inetShopTest/static/media/3grill.b1a6fcc344e04c2b729e.svg",
@@ -43,11 +43,11 @@
     "static/media/shoppingCart.svg": "/inetShopTest/static/media/shoppingCart.6945a709023636d91afb1a932c314940.svg",
     "index.html": "/inetShopTest/index.html",
     "static/media/trash.svg": "/inetShopTest/static/media/trash.30b4b4269ee96ff8fd5ff2ce26e21ea5.svg",
-    "main.58508948.css.map": "/inetShopTest/static/css/main.58508948.css.map",
-    "main.b092292c.js.map": "/inetShopTest/static/js/main.b092292c.js.map"
+    "main.eea84633.css.map": "/inetShopTest/static/css/main.eea84633.css.map",
+    "main.a60a5036.js.map": "/inetShopTest/static/js/main.a60a5036.js.map"
   },
   "entrypoints": [
-    "static/css/main.58508948.css",
-    "static/js/main.b092292c.js"
+    "static/css/main.eea84633.css",
+    "static/js/main.a60a5036.js"
   ]
 }
