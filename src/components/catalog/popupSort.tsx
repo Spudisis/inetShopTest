@@ -16,7 +16,7 @@ const sortingParams = [
     originalName: "count",
   },
 ];
-type PopupClick = MouseEvent & {
+export type PopupClick = MouseEvent & {
   path: Node[];
 };
 const PopupSort = React.memo(() => {
@@ -51,7 +51,7 @@ const PopupSort = React.memo(() => {
     isVisible(false);
   };
   return (
-    <div ref={popup}>
+    <div className={s.mainPopup} ref={popup}>
       <div className={s.setFilter}>
         <b onClick={() => isVisible(!visible)}>{sortingParam}&nbsp;</b>
         <div className={rotateArrow} onClick={() => setAscDesc()}>

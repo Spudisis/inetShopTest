@@ -8,6 +8,7 @@ import { useAppDispatch } from "../../redux/store";
 import ListItem from "../listItem";
 import Skeleton from "../skeleton";
 import s from "../../sass/catalog.module.scss";
+import { getSaleItemsSl } from "../../redux/slices/itemsSaleSlice";
 type pages = {
   catalogPageCounter: number;
 };
@@ -15,9 +16,9 @@ const ShowItems: React.FC<pages> = React.memo(({ catalogPageCounter }) => {
   const dispatch = useAppDispatch();
   const { itemsDop, loading }: ItemsType = useSelector(getDataItems);
   const { sale }: stateSort = useSelector(gerSortData);
-
   const nextPage = () => {
-    if (itemsDop.length >= catalogPageCounter + 6) {
+    const checkLenghtObj = sale ? itemRenderSale : itemsDop;
+    if (checkLenghtObj.length > catalogPageCounter + 6) {
       dispatch(upCatalogPage());
     }
   };
@@ -27,7 +28,6 @@ const ShowItems: React.FC<pages> = React.memo(({ catalogPageCounter }) => {
     }
   };
   const itemRenderSale = itemsDop
-    .slice(catalogPageCounter, catalogPageCounter + 6)
     .map(
       (obj) =>
         obj.sale !== 0 && (
@@ -44,7 +44,10 @@ const ShowItems: React.FC<pages> = React.memo(({ catalogPageCounter }) => {
             key={obj.id + "list"}
           />
         )
-    );
+    )
+    .filter((obj) => obj !== false);
+
+  const slicesItemsSale = itemRenderSale.slice(catalogPageCounter, catalogPageCounter + 6);
 
   const itemRenderNoneSale = itemsDop
     .slice(catalogPageCounter, catalogPageCounter + 6)
@@ -73,7 +76,7 @@ const ShowItems: React.FC<pages> = React.memo(({ catalogPageCounter }) => {
         ) : itemsDop.length === 0 ? (
           <div className={s.warn}>Попробуйте другие параметры для поиска</div>
         ) : sale ? (
-          itemRenderSale
+          slicesItemsSale
         ) : (
           itemRenderNoneSale
         )}

@@ -30,3 +30,8 @@
   font-size: 32px;
   line-height: 44px;
 }
+@media screen and (max-width: 660px) {
+  .textHelp {
+    text-align: center;
+  }
+}

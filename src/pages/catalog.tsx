@@ -9,7 +9,7 @@ import { fetchProductMock, getDataItems, Item, ItemsType, setItems, Status } fro
 import { getFilterData, statefilter } from "../redux/slices/filterSlice";
 import { gerSortData, stateSort } from "../redux/slices/sortSlice";
 import SetFilters from "../components/catalog/setFilters";
-import PopupSort from "../components/catalog/popupSort";
+import PopupSort, { PopupClick } from "../components/catalog/popupSort";
 import ShowItems from "../components/catalog/showItems";
 import { getPage } from "../redux/slices/pageSlice";
 export type filter = {
@@ -26,6 +26,7 @@ const Catalog = () => {
   const { search, filterBy, ascDesc, filtersView, type }: statefilter = useSelector(getFilterData);
   const { sale }: stateSort = useSelector(gerSortData);
   const { catalogPageCounter } = useSelector(getPage);
+  const [visible, isVisible] = React.useState(false);
   const fetchData = () => {
     dispatch(fetchProductMock({ search, filterBy, ascDesc, type, sale }));
   };
@@ -43,9 +44,18 @@ const Catalog = () => {
     }
     dispatch(setItems(newIt));
   };
-
+  const popup = React.useRef<HTMLDivElement>(null);
+  const OpenModal = React.useRef<HTMLButtonElement>(null);
   React.useEffect(() => {
     window.scrollTo(0, 0);
+    const handleClickOut = (e: MouseEvent) => {
+      const _event = e as PopupClick;
+      if (popup.current && !_event.path.includes(popup.current) && !_event.path.includes(OpenModal.current!)) {
+        isVisible(false);
+      }
+    };
+    document.body.addEventListener("click", handleClickOut);
+    return () => document.body.removeEventListener("click", handleClickOut);
   }, []);
   React.useEffect(() => {
     fetchData();
@@ -58,10 +68,28 @@ const Catalog = () => {
     <div className={s.catalog}>
       <div className={s.filterAsk}>
         <div className={s.typeCatalog}> {type ? type : "Товары"}</div>
+        <div className={s.FilterComponentPopup}>
+          <button ref={OpenModal} onClick={() => isVisible(!visible)}>
+            Выбрать фильтры
+          </button>
+          {visible && (
+            <div ref={popup}>
+              <div className={s.FilterComponentPopup__block}>
+                <Filters />
+              </div>
+              <button className={s.closeModal} onClick={() => isVisible(!visible)}>
+                X
+              </button>
+            </div>
+          )}
+        </div>
         <PopupSort />
       </div>
       <div className={s.filters}>
-        <Filters />
+        <div className={s.FiltersComponent}>
+          <Filters />
+        </div>
+
         <div className={s.itemsFiltersSet}>
           <div className={s.SelectFilter}>
             <SetFilters />

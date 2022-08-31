@@ -141,3 +141,8 @@
   color: white;
   background: #ffa900;
 }
+@media screen and (max-width: 360px) {
+  .container {
+    width: 280px;
+  }
+}

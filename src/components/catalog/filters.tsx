@@ -62,25 +62,29 @@ const Filters = React.memo(() => {
           <label htmlFor={id + "3"}>Продукция от "Ильинского"</label>
         </div>
       </div>
+      <h3 className={s.secondBlockParam}>Каталог</h3>
       <div className={s.filtersParams}>
-        <h3 className={s.secondBlockParam}>Каталог</h3>
-        <div>
-          <h4 className={s.firstThemeCatalog} onClick={() => SendFilterType("Кулинария")}>
-            Кулинария
-          </h4>
-          <ol>{renderFilterParams("Кулинария")}</ol>
+        <div className={s.BlockTypes}>
+          <div>
+            <h4 className={s.firstThemeCatalog} onClick={() => SendFilterType("Кулинария")}>
+              Кулинария
+            </h4>
+            <ol>{renderFilterParams("Кулинария")}</ol>
+          </div>
+          <div>
+            <h4 onClick={() => SendFilterType("Супермаркет")}>Супермаркет</h4>
+            <ol>{renderFilterParams("Супермаркет")}</ol>
+          </div>
         </div>
-        <div>
-          <h4 onClick={() => SendFilterType("Супермаркет")}>Супермаркет</h4>
-          <ol>{renderFilterParams("Супермаркет")}</ol>
-        </div>
-        <div>
-          <h4 onClick={() => SendFilterType("Заморозка")}>Заморозка</h4>
-          <ol>{renderFilterParams("Заморозка")}</ol>
-        </div>
-        <div>
-          <h4 onClick={() => SendFilterType("Другое")}>Другое</h4>
-          <ol>{renderFilterParams("Другое")}</ol>
+        <div className={s.BlockTypes}>
+          <div>
+            <h4 onClick={() => SendFilterType("Заморозка")}>Заморозка</h4>
+            <ol>{renderFilterParams("Заморозка")}</ol>
+          </div>
+          <div>
+            <h4 onClick={() => SendFilterType("Другое")}>Другое</h4>
+            <ol>{renderFilterParams("Другое")}</ol>
+          </div>
         </div>
       </div>
     </div>

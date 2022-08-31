@@ -19,6 +19,7 @@
   min-height: 60vh;
   width: 100%;
   margin: 0px auto;
+  margin-bottom: 50px;
 }
 .footer {
   min-width: 100%;
@@ -32,10 +33,12 @@ body {
 @media screen and (max-width: 1250px) {
   .container {
     max-width: 700px;
+    padding: 0px 10px;
   }
 }
-@media screen and (max-width: 630px) {
+@media screen and (max-width: 660px) {
   .container {
     max-width: 360px;
+    padding: 0px 5px;
   }
 }

@@ -7,9 +7,9 @@ export const fetchProductMock = createAsyncThunk<Item[], filter>(
   `items/fetchItemsProduct`,
   async ({ search, filterBy, ascDesc, type }) => {
     const { data } = await axios.get(
-      `https://62f44a7fac59075124bbda32.mockapi.io/clicker?${
-        search ? "name=" + search : type ? "type=" + type : ""
-      }&${filterBy !== "" ? "sortBy=" + filterBy : ""}&order=${ascDesc}`
+      `https://62f44a7fac59075124bbda32.mockapi.io/clicker?${search ? "name=" + search : type ? "type=" + type : ""}&${
+        filterBy !== "" ? "sortBy=" + filterBy : ""
+      }&order=${ascDesc}`
     );
     return data;
   }

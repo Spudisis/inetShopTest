@@ -1,5 +1,5 @@
 .Wrapper {
-  width: 315px;
+  width: 100%;
 
   ol {
     padding: 0px;
@@ -51,4 +51,44 @@ h4 {
   font-size: 20px;
   text-transform: uppercase;
   margin-bottom: 7px;
+}
+.BlockTypes {
+  display: flex;
+  flex-direction: column;
+}
+@media screen and (max-width: 660px) {
+  .Wrapper {
+    width: 90%;
+    margin: 0 auto;
+    h3 {
+      display: flex;
+      justify-content: center;
+    }
+  }
+  .BlockTypes {
+    width: 50%;
+    div h4 {
+      margin-top: 0px;
+    }
+    div h4:nth-child(2n + 1) {
+      margin-top: 20px;
+    }
+  }
+  .filtersParams:first-child {
+    align-items: center;
+    width: 100%;
+    div label {
+      font-size: 16px;
+    }
+  }
+  .filtersParams:last-child {
+    flex-direction: row;
+    h4 {
+      font-size: 20px;
+    }
+    li {
+      font-size: 15px;
+      padding-left: 0px;
+    }
+  }
 }
