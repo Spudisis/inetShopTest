@@ -7,11 +7,11 @@ import {
   getFilterData,
   statefilter,
 } from "../../redux/slices/filterSlice";
-import { changeParamSale, gerSortData } from "../../redux/slices/sortSlice";
+import { changeParamSale } from "../../redux/slices/sortSlice";
 import { useAppDispatch } from "../../redux/store";
 import s from "../../sass/setFilters.module.scss";
 
-const SetFilters = () => {
+const SetFilters = React.memo(() => {
   const dispatch = useAppDispatch();
   const { type, filtersView }: statefilter = useSelector(getFilterData);
   const [nullFilters, setNullFilters] = React.useState(false);
@@ -25,9 +25,7 @@ const SetFilters = () => {
   };
 
   React.useEffect(() => {
-    type || filtersView.length !== 0
-      ? setNullFilters(true)
-      : setNullFilters(false);
+    type || filtersView.length !== 0 ? setNullFilters(true) : setNullFilters(false);
   }, [type, filtersView]);
   return (
     <div className={s.container}>
@@ -38,11 +36,7 @@ const SetFilters = () => {
       )}
       {filtersView &&
         filtersView.map((obj, index) => (
-          <button
-            key={"view" + index}
-            className={s.block}
-            onClick={() => dispatch(deleteFilterView(obj))}
-          >
+          <button key={"view" + index} className={s.block} onClick={() => dispatch(deleteFilterView(obj))}>
             {obj.classForPerson} &#10006;
           </button>
         ))}
@@ -55,6 +49,6 @@ const SetFilters = () => {
       )}
     </div>
   );
-};
+});
 
 export default SetFilters;

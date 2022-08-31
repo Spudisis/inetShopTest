@@ -3,6 +3,7 @@ import ItemForFilters from "../../assets/Json/ItemForFilters.json";
 import { Link } from "react-router-dom";
 import { useAppDispatch } from "../../redux/store";
 import { addFilterView, deleteAllFilterView } from "../../redux/slices/filterSlice";
+import { clearCatalogPage } from "../../redux/slices/pageSlice";
 
 type propsInfo = {
   classProduct: string;
@@ -16,6 +17,7 @@ const BlocksInfoMain: React.FC<propsInfo> = ({ classProduct }) => {
     dispatch(deleteAllFilterView());
     const classAdd = { class: classT, classForPerson: classForPerson };
     dispatch(addFilterView(classAdd));
+    dispatch(clearCatalogPage());
   };
 
   React.useEffect(() => {

@@ -19,7 +19,7 @@ const sortingParams = [
 type PopupClick = MouseEvent & {
   path: Node[];
 };
-const PopupSort = () => {
+const PopupSort = React.memo(() => {
   const popup = React.useRef<HTMLDivElement>(null);
   const [rotateArrow, setRotateArrow] = React.useState(s.ascDesc);
   const [visible, isVisible] = React.useState(false);
@@ -43,9 +43,7 @@ const PopupSort = () => {
   }, [sortingParam]);
 
   const setAscDesc = () => {
-    rotateArrow === s.ascDesc
-      ? setRotateArrow(s.ascDescRotate)
-      : setRotateArrow(s.ascDesc);
+    rotateArrow === s.ascDesc ? setRotateArrow(s.ascDescRotate) : setRotateArrow(s.ascDesc);
     dispatch(addAscdesc());
   };
   const changeSortParam = (name: string) => {
@@ -63,11 +61,7 @@ const PopupSort = () => {
       {visible && (
         <div className={s.popup}>
           {sortingParams.map((obj, index) => (
-            <div
-              key={"sorting" + index}
-              className={s.setFilterPopup}
-              onClick={() => changeSortParam(obj.name)}
-            >
+            <div key={"sorting" + index} className={s.setFilterPopup} onClick={() => changeSortParam(obj.name)}>
               <b>{obj.name}</b>
             </div>
           ))}
@@ -75,6 +69,6 @@ const PopupSort = () => {
       )}
     </div>
   );
-};
+});
 
 export default PopupSort;

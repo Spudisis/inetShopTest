@@ -1,4 +1,5 @@
 import React from "react";
+
 import s from "../sass/listItem.module.scss";
 import ButtonBuy from "./buttons/buttonBuy";
 import LikeButton from "./buttons/likeButton";
@@ -28,6 +29,7 @@ const ListItem: React.FC<propsItem> = ({
 }) => {
   const [priceSale, setPriceSale] = React.useState(0);
 
+  
   React.useEffect(() => {
     saleProd && setPriceSale(calcSalePrice());
   }, []);

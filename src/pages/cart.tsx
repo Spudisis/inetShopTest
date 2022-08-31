@@ -6,7 +6,6 @@ import { useAppDispatch } from "../redux/store";
 import { Link } from "react-router-dom";
 import s from "../sass/cart.module.scss";
 import TotalInfoCart from "../components/cart/TotalInfoCart";
-import BlocksInfoMain from "../components/main/BlocksInfoMain";
 import SaleItems from "../components/main/saleItems";
 import { fetchSaleMock, getSaleItemsSl, ItemsTypeSale } from "../redux/slices/itemsSaleSlice";
 

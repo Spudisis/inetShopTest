@@ -5,8 +5,9 @@ import { useAppDispatch } from "../../redux/store";
 import s from "../../sass/filters.module.scss";
 import ItemForFilters from "../../assets/Json/ItemForFilters.json";
 import { useSelector } from "react-redux";
+import { clearCatalogPage } from "../../redux/slices/pageSlice";
 
-const Filters = () => {
+const Filters = React.memo(() => {
   const dispatch = useAppDispatch();
   const { sale } = useSelector(gerSortData);
   const [saleYes, setSaleYes] = React.useState(sale);
@@ -16,10 +17,12 @@ const Filters = () => {
     ItemForFilters.map((elem) => {
       elem.type === type && dispatch(() => ChangeClassProduct(elem.class, elem.classForPerson));
     });
+    dispatch(clearCatalogPage());
   };
   const ChangeClassProduct = (classT: string, classForPerson: string) => {
     const classAdd = { class: classT, classForPerson: classForPerson };
     dispatch(addFilterView(classAdd));
+    dispatch(clearCatalogPage());
   };
 
   React.useEffect(() => {
@@ -82,6 +85,6 @@ const Filters = () => {
       </div>
     </div>
   );
-};
+});
 
 export default Filters;

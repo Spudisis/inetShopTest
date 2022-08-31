@@ -4,11 +4,13 @@ import { RootState } from "../store";
 export interface pages {
   page: string;
   salePageCounter: number;
+  catalogPageCounter: number;
 }
 
 const initialState: pages = {
   page: "like",
   salePageCounter: 0,
+  catalogPageCounter: 0,
 };
 export const profilePagesSlice = createSlice({
   name: "classChange",
@@ -23,11 +25,21 @@ export const profilePagesSlice = createSlice({
     downSalePage: (state) => {
       state.salePageCounter -= 4;
     },
+    upCatalogPage: (state) => {
+      state.catalogPageCounter += 6;
+    },
+    downCatalogPage: (state) => {
+      state.catalogPageCounter -= 6;
+    },
+    clearCatalogPage: (state) => {
+      state.catalogPageCounter = 0;
+    },
   },
 });
 
-export const getPage = (state: RootState) => state.profile;
+export const getPage = (state: RootState) => state.pages;
 
-export const { setPageSls, downSalePage, upSalePage } = profilePagesSlice.actions;
+export const { setPageSls, downSalePage, upSalePage, upCatalogPage, downCatalogPage, clearCatalogPage } =
+  profilePagesSlice.actions;
 
 export default profilePagesSlice.reducer;

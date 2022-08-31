@@ -11,6 +11,7 @@ import { useAppDispatch } from "../redux/store";
 import { addFilterView, addType } from "../redux/slices/filterSlice";
 import ItemForFilters from "../assets/Json/ItemForFilters.json";
 import { changeParamSale, gerSortData } from "../redux/slices/sortSlice";
+import { clearCatalogPage } from "../redux/slices/pageSlice";
 
 const types = ["Супермаркет", "Кулинария", "Заморозка", "Другое"];
 const typesImg = [apple, pizza, chebureck, some, sale, shops];
@@ -22,10 +23,12 @@ const Navigation = () => {
     ItemForFilters.map((elem) => {
       elem.type === type && dispatch(() => ChangeClassProduct(elem.class, elem.classForPerson));
     });
+    dispatch(clearCatalogPage());
   };
   const ChangeClassProduct = (classT: string, classForPerson: string) => {
     const classAdd = { class: classT, classForPerson: classForPerson };
     dispatch(addFilterView(classAdd));
+    dispatch(clearCatalogPage());
   };
 
   return (

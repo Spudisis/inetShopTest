@@ -10,7 +10,8 @@ import { getFilterData, statefilter } from "../redux/slices/filterSlice";
 import { gerSortData, stateSort } from "../redux/slices/sortSlice";
 import SetFilters from "../components/catalog/setFilters";
 import PopupSort from "../components/catalog/popupSort";
-
+import ShowItems from "../components/catalog/showItems";
+import { getPage } from "../redux/slices/pageSlice";
 export type filter = {
   search: string;
   filterBy: string;
@@ -24,6 +25,7 @@ const Catalog = () => {
   const { items, itemsDop, loading }: ItemsType = useSelector(getDataItems);
   const { search, filterBy, ascDesc, filtersView, type }: statefilter = useSelector(getFilterData);
   const { sale }: stateSort = useSelector(gerSortData);
+  const { catalogPageCounter } = useSelector(getPage);
   const fetchData = () => {
     dispatch(fetchProductMock({ search, filterBy, ascDesc, type, sale }));
   };
@@ -41,50 +43,16 @@ const Catalog = () => {
     }
     dispatch(setItems(newIt));
   };
+
   React.useEffect(() => {
     window.scrollTo(0, 0);
   }, []);
-
   React.useEffect(() => {
     fetchData();
   }, [search, filterBy, ascDesc, type]);
-
   React.useEffect(() => {
     changeNewMass();
   }, [filtersView, items]);
-
-  const itemRenderSale = itemsDop.map(
-    (obj) =>
-      obj.sale !== 0 && (
-        <ListItem
-          id={obj.id}
-          price={obj.price}
-          title={obj.title}
-          count={obj.count}
-          weight={obj.weight}
-          imageUrl={obj.imageUrl}
-          classProduct={obj.class}
-          nameProd={obj.name}
-          saleProd={obj.sale}
-          key={obj.id + "list"}
-        />
-      )
-  );
-
-  const itemRenderNoneSale = itemsDop.map((obj) => (
-    <ListItem
-      id={obj.id}
-      price={obj.price}
-      title={obj.title}
-      count={obj.count}
-      weight={obj.weight}
-      imageUrl={obj.imageUrl}
-      classProduct={obj.class}
-      nameProd={obj.name}
-      saleProd={obj.sale}
-      key={obj.id + "list"}
-    />
-  ));
 
   return (
     <div className={s.catalog}>
@@ -98,19 +66,7 @@ const Catalog = () => {
           <div className={s.SelectFilter}>
             <SetFilters />
           </div>
-          <div className={s.wrapperItems}>
-            {loading === Status.LOADING ? (
-              [...new Array(6)].map((_, index) => <Skeleton key={index} />)
-            ) : loading === Status.ERROR ? (
-              <div className={s.warn}>Произошла ошибка</div>
-            ) : itemsDop.length === 0 ? (
-              <div className={s.warn}>Попробуйте другие параметры для поиска</div>
-            ) : sale ? (
-              itemRenderSale
-            ) : (
-              itemRenderNoneSale
-            )}
-          </div>
+          <ShowItems catalogPageCounter={catalogPageCounter} />
         </div>
       </div>
     </div>

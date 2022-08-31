@@ -17,6 +17,30 @@
   justify-content: space-between;
   margin-bottom: 40px;
 }
+.buttonItemNavigate {
+  display: flex;
+  justify-content: center;
+  button {
+    width: 150px;
+    height: 50px;
+    border-radius: 20px;
+    background: #ff0000;
+    border: none;
+    cursor: pointer;
+    color: white;
+    font-weight: 700;
+    font-size: 25px;
+  }
+  button:hover {
+    background: #ffa900;
+  }
+  button:first-child {
+    margin-right: 30px;
+  }
+  button:last-child {
+    margin-left: 30px;
+  }
+}
 .typeCatalog {
   font-weight: 700;
   font-size: 32px;
