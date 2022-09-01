@@ -63,7 +63,7 @@ const BlocksInfoMain: React.FC<propsInfo> = ({ classProduct }) => {
         >
           <div>
             <span>{newItem[index].classForPerson}</span>
-            <img src={obj} />
+            <img src={obj} loading="lazy" />
           </div>
         </Link>
       ))}
