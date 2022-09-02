@@ -1,7 +1,7 @@
 import React from "react";
 import s from "../../sass/slider.module.scss";
-import cashback from "../../assets/categories/cashback.png";
-import saleBanner from "../../assets/categories/saleBanner.png";
+import cashback from "../../assets/categories/cashback.svg";
+import saleBanner from "../../assets/categories/saleBanner.svg";
 import slider1 from "../../assets/categories/slider1.svg";
 const Slider = () => {
   return (
