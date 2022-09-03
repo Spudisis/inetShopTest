@@ -1,7 +1,7 @@
 {
   "files": {
-    "main.css": "/inetShopTest/static/css/main.31009913.css",
-    "main.js": "/inetShopTest/static/js/main.a260ffa4.js",
+    "main.css": "/inetShopTest/static/css/main.14115f61.css",
+    "main.js": "/inetShopTest/static/js/main.52ba6794.js",
     "static/css/116.639579ee.chunk.css": "/inetShopTest/static/css/116.639579ee.chunk.css",
     "static/js/116.f47fad0a.chunk.js": "/inetShopTest/static/js/116.f47fad0a.chunk.js",
     "static/media/slider1.svg": "/inetShopTest/static/media/slider1.4b0eecde3a0f552eca488a1e2a0a7549.svg",
@@ -45,13 +45,13 @@
     "static/media/shoppingCart.svg": "/inetShopTest/static/media/shoppingCart.6945a709023636d91afb1a932c314940.svg",
     "index.html": "/inetShopTest/index.html",
     "static/media/trash.svg": "/inetShopTest/static/media/trash.30b4b4269ee96ff8fd5ff2ce26e21ea5.svg",
-    "main.31009913.css.map": "/inetShopTest/static/css/main.31009913.css.map",
-    "main.a260ffa4.js.map": "/inetShopTest/static/js/main.a260ffa4.js.map",
+    "main.14115f61.css.map": "/inetShopTest/static/css/main.14115f61.css.map",
+    "main.52ba6794.js.map": "/inetShopTest/static/js/main.52ba6794.js.map",
     "116.639579ee.chunk.css.map": "/inetShopTest/static/css/116.639579ee.chunk.css.map",
     "116.f47fad0a.chunk.js.map": "/inetShopTest/static/js/116.f47fad0a.chunk.js.map"
   },
   "entrypoints": [
-    "static/css/main.31009913.css",
-    "static/js/main.a260ffa4.js"
+    "static/css/main.14115f61.css",
+    "static/js/main.52ba6794.js"
   ]
 }
