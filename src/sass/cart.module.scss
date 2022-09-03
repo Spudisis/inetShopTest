@@ -25,6 +25,8 @@
   font-size: 40px;
   line-height: 27px;
   margin-bottom: 20px;
+  text-align: center;
+  line-height: 40px;
 }
 .toCatalog {
   background: #fff8eb;
@@ -56,4 +58,19 @@
 .clearCart:hover {
   font-weight: 600;
   color: black;
+}
+@media screen and (max-width: 1320px) {
+  .InfoCart {
+    flex-direction: column;
+    align-items: center;
+  }
+}
+
+@media screen and (max-width: 660px) {
+  .namePage {
+    justify-content: center;
+  }
+  .totalInfo {
+    margin-left: 0px;
+  }
 }

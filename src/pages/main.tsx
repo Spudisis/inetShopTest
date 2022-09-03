@@ -7,7 +7,6 @@ import BlockNameMain from "../components/main/BlockNameMain";
 import BlocksInfoMain from "../components/main/BlocksInfoMain";
 import SaleItems from "../components/main/saleItems";
 import Loader from "../components/main/sliderSkeleton";
-import Slider from "../components/main/slider";
 
 const Main = () => {
   const dispatch = useAppDispatch();
@@ -22,7 +21,6 @@ const Main = () => {
       <React.Suspense fallback={<Loader />}>
         <SliderElem />
       </React.Suspense>
-      {/* <Slider /> */}
       <div className={s.blocksTypesProduct}>
         <SaleItems />
         <div className={s.block}>

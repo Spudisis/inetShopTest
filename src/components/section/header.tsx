@@ -4,7 +4,6 @@ import s from "../../sass/header.module.scss";
 import Search from "../search";
 import person from "../../assets/person.png";
 import like from "../../assets/like.png";
-
 import shoppingCart from "../../assets/shoppingCart.svg";
 import { Link } from "react-router-dom";
 import { useAppDispatch } from "../../redux/store";
@@ -13,9 +12,11 @@ import { useSelector } from "react-redux";
 import { getTotalPriceItems } from "../../redux/slices/cartSlice";
 import ButtonCatalog from "../buttons/buttonCatalog";
 import ButtonDelivery from "../buttons/buttonDelivery";
+import { useWhyDidYouUpdate } from "ahooks";
 const Header = () => {
   const dispatch = useAppDispatch();
   const totalPrice = useSelector(getTotalPriceItems);
+
   return (
     <div className={s.wrapper}>
       <div className={s.container}>

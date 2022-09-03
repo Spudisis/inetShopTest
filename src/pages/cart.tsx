@@ -27,7 +27,6 @@ const Cart = () => {
             </button>
           )}
         </div>
-
         {items.length !== 0 ? (
           <div className={s.InfoCart}>
             <div>

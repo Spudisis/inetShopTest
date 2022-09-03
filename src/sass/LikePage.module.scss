@@ -16,3 +16,8 @@
     height: 20px;
   }
 }
+@media screen and (max-width: 1250px) {
+  .listLikes {
+    grid-template-columns: 1fr 1fr;
+  }
+}

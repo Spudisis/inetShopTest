@@ -53,10 +53,12 @@ const PopupSort = React.memo(() => {
   return (
     <div className={s.mainPopup} ref={popup}>
       <div className={s.setFilter}>
-        <b onClick={() => isVisible(!visible)}>{sortingParam}&nbsp;</b>
-        <div className={rotateArrow} onClick={() => setAscDesc()}>
-          &gt;
-        </div>
+        <button className={s.sortingParam} onClick={() => isVisible(!visible)}>
+          {sortingParam}&nbsp;
+        </button>
+        <button className={s.arrow} onClick={() => setAscDesc()}>
+          <div className={rotateArrow}>&gt;</div>
+        </button>
       </div>
       {visible && (
         <div className={s.popup}>

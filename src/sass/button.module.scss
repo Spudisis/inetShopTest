@@ -38,3 +38,23 @@
   color: white;
   background: #ffa900;
 }
+@media screen and (max-width: 660px) {
+  .button {
+    padding: 0px;
+    width: 56px;
+    height: 22px;
+    font-size: 9px;
+    line-height: 11px;
+  }
+  .counterBuy {
+    width: 56px;
+    height: 22px;
+    font-size: 9px;
+  }
+  .changeCounter {
+    height: 17px;
+    width: 22px;
+    align-items: center;
+    line-height: 9px;
+  }
+}

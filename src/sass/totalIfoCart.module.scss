@@ -41,3 +41,33 @@
     margin: 0px 0px 0px 20px;
   }
 }
+@media screen and (max-width: 500px) {
+  .wrapper {
+    width: 95vw;
+    height: 350px;
+    margin: 0px;
+    border: none;
+    border-radius: 0px;
+  }
+  .confirmOrder {
+    width: 80%;
+    height: 40px;
+    font-size: 18px;
+    border: none;
+  }
+  .infoOrder {
+    margin: 0px;
+    p {
+      font-weight: 400;
+      font-size: 15px;
+      line-height: 27px;
+      text-align: right;
+    }
+    p:first-child {
+      margin: 0px 20px 0px 0px;
+    }
+    p:last-child {
+      margin: 0px 0px 0px 20px;
+    }
+  }
+}

@@ -19,27 +19,24 @@ const Profile = () => {
     <div className={s.container}>
       <h2 className={s.namePage}>Личный кабинет</h2>
       <div className={s.navigation}>
-        <NavLink
-          to="/profile"
+        <button
           className={page === "person" ? s.spanNavigActive : s.spanNavig}
           onClick={() => changePage("person")}
         >
           Личные данные
-        </NavLink>
-        <NavLink
-          to="/profile"
+        </button>
+        <button
           className={page === "historyOrder" ? s.spanNavigActive : s.spanNavig}
           onClick={() => changePage("historyOrder")}
         >
           История заказов
-        </NavLink>
-        <NavLink
-          to="/profile"
+        </button>
+        <button
           className={page === "like" ? s.spanNavigActive : s.spanNavig}
           onClick={() => changePage("like")}
         >
           Избранное
-        </NavLink>
+        </button>
       </div>
       <div>{page === "like" ? <LikePage /> : page === "person" ? <Person /> : "no"}</div>
     </div>

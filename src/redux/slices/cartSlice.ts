@@ -38,10 +38,7 @@ export const dataSlice = createSlice({
         });
       }
       state.totalPrice = state.items.reduce((sum, obj) => {
-        return (
-          Math.ceil((obj.price / 100) * (100 - obj.saleProd)) * obj.countCart +
-          sum
-        );
+        return Math.ceil((obj.price / 100) * (100 - obj.saleProd)) * obj.countCart + sum;
       }, 0);
     },
     delItemCart: (state, action: PayloadAction<string>) => {
@@ -53,11 +50,7 @@ export const dataSlice = createSlice({
           state.items = state.items.filter((obj) => obj.id !== action.payload);
         }
         state.totalPrice = state.items.reduce((sum, obj) => {
-          return (
-            Math.ceil((obj.price / 100) * (100 - obj.saleProd)) *
-              obj.countCart +
-            sum
-          );
+          return Math.ceil((obj.price / 100) * (100 - obj.saleProd)) * obj.countCart + sum;
         }, 0);
       }
     },

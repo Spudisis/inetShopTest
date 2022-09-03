@@ -8,7 +8,6 @@
   display: grid;
   grid-template-columns: 1fr 1fr 1fr 1fr;
   justify-items: center;
-  margin-bottom: 200px;
 }
 .saleBlockName {
   display: flex;
@@ -115,13 +114,18 @@
 .buttonSaleNavigateHidden {
   display: none;
 }
+.block {
+  margin-bottom: 200px;
+}
 @media screen and (max-width: 1250px) {
+  .block {
+    margin-bottom: 100px;
+  }
   .wrapperInfoBlocks {
     grid-template-columns: 1fr 1fr;
   }
   .listSale {
     grid-template-columns: 1fr 1fr;
-    margin-bottom: 100px;
   }
   .blocksTypesProduct {
     margin-top: 50px;
@@ -149,21 +153,29 @@
     }
   }
   .wrapperInfoBlocks {
-    grid-template-columns: 1fr;
+    grid-template-columns: 1fr 1fr;
+    div {
+      border-radius: 30px;
+      width: 150px;
+      height: 150px;
+      span {
+        font-size: 15px;
+        line-height: 20px;
+      }
+    }
   }
   .listSale {
-    grid-template-columns: 1fr;
-    margin-bottom: 50px;
+    column-gap: 0px;
   }
   .buttonSaleNavigateShow {
     display: none;
   }
   .buttonSaleNavigateHidden {
-    display: block;
     width: 100%;
+    display: block;
   }
   .navigateSaleProduct {
-    width: 95%;
+    width: 100%;
     margin: 0 auto;
     button {
       font-size: 30px;

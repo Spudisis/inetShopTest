@@ -1,7 +1,5 @@
 import React from "react";
 import { useSelector } from "react-redux";
-import ListItem from "../components/listItem";
-import Skeleton from "../components/skeleton";
 import { useAppDispatch } from "../redux/store";
 import s from "../sass/catalog.module.scss";
 import Filters from "../components/catalog/filters";
@@ -89,7 +87,6 @@ const Catalog = () => {
         <div className={s.FiltersComponent}>
           <Filters />
         </div>
-
         <div className={s.itemsFiltersSet}>
           <div className={s.SelectFilter}>
             <SetFilters />

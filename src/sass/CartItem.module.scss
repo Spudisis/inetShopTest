@@ -1,7 +1,7 @@
 .block {
   display: grid;
   justify-content: left;
-  grid-template-columns: 170px 330px 100px 100px 120px;
+  grid-template-columns: 170px 650px;
   margin-bottom: 18px;
 }
 
@@ -115,5 +115,68 @@
     font-size: 14px;
     line-height: 19px;
     text-align: right;
+  }
+}
+.count630 {
+  display: none;
+}
+.countButtonBuy {
+  display: grid;
+  grid-template-columns: 100px 100px;
+}
+.infoBuyItem {
+  display: flex;
+  justify-content: space-around;
+}
+@media screen and (max-width: 850px) {
+  .block {
+    grid-template-columns: 120px 200px;
+  }
+  .imgItem {
+    width: 100px;
+    height: 100px;
+  }
+  .countFull {
+    display: none;
+  }
+  .count630 {
+    display: block;
+  }
+  .countBuy {
+    display: none;
+  }
+  .infoBuyItem {
+    flex-direction: column;
+    margin-left: 10px;
+  }
+  .countButtonBuy {
+    grid-template-columns: 100px 70px;
+    align-items: center;
+  }
+  .NameCount {
+    width: 100%;
+    &__Count {
+      font-size: 12px;
+    }
+    &__Name {
+      font-size: 15px;
+    }
+  }
+  .priceTotal {
+    div:first-child {
+      font-size: 16px;
+    }
+  }
+  .priceNonSale {
+    font-size: 16px;
+  }
+  .saleOrigPrice {
+    display: flex;
+    align-items: center;
+  }
+}
+@media screen and (max-width: 450px) {
+  .infoBuyItem {
+    margin-left: 5px;
   }
 }
