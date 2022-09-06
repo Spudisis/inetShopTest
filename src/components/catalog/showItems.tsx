@@ -70,7 +70,7 @@ const ShowItems: React.FC<pages> = React.memo(({ catalogPageCounter }) => {
     <>
       <div className={s.wrapperItems}>
         {loading === Status.LOADING ? (
-          [...new Array(6)].map((_, index) => <Skeleton key={index} />)
+          [...new Array(1)].map((_, index) => <Skeleton key={index} />)
         ) : loading === Status.ERROR ? (
           <div className={s.warn}>Произошла ошибка</div>
         ) : itemsDop.length === 0 ? (

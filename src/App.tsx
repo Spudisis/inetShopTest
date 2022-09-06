@@ -5,14 +5,20 @@ import Navigation from "./components/navigation";
 import Main from "./pages/main";
 import "./sass/App.scss";
 import "./sass/normalize.scss";
-import { Routes, Route } from "react-router-dom";
+import { Routes, Route, useLocation } from "react-router-dom";
 import Profile from "./pages/profile";
 import Catalog from "./pages/catalog";
 import Cart from "./pages/cart";
 import NotFound from "./pages/notFound";
+import { useAppDispatch } from "./redux/store";
+import { setPageLocation } from "./redux/slices/pageSlice";
 
 function App() {
-  
+  let location = useLocation();
+  const dispath = useAppDispatch();
+  React.useEffect(() => {
+    dispath(setPageLocation(location.pathname));
+  }, [location]);
   return (
     <>
       <div className="container">
