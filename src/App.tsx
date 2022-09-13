@@ -12,6 +12,7 @@ import Cart from "./pages/cart";
 import NotFound from "./pages/notFound";
 import { useAppDispatch } from "./redux/store";
 import { setPageLocation } from "./redux/slices/pageSlice";
+import Authorization from "./pages/authorization";
 
 function App() {
   let location = useLocation();
@@ -32,6 +33,7 @@ function App() {
             <Route path="/profile" element={<Profile />} />
             <Route path="/catalog" element={<Catalog />} />
             <Route path="/cart" element={<Cart />} />
+            <Route path="/authorization" element={<Authorization />} />
             <Route path="*" element={<NotFound />} />
           </Routes>
         </main>

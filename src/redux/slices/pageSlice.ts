@@ -6,13 +6,15 @@ export interface pages {
   salePageCounter: number;
   catalogPageCounter: number;
   pageLocation: string;
+  beforePage: string;
 }
 
 const initialState: pages = {
   page: "like",
   salePageCounter: 0,
   catalogPageCounter: 0,
-  pageLocation : '/',
+  pageLocation: "/",
+  beforePage: "",
 };
 export const profilePagesSlice = createSlice({
   name: "classChange",
@@ -36,15 +38,26 @@ export const profilePagesSlice = createSlice({
     clearCatalogPage: (state) => {
       state.catalogPageCounter = 0;
     },
-    setPageLocation: (state, action: PayloadAction<string>)=>{
+    setPageLocation: (state, action: PayloadAction<string>) => {
       state.pageLocation = action.payload;
+    },
+    setBeforePage: (state, action: PayloadAction<string>) => {
+      state.beforePage = action.payload;
     },
   },
 });
 
 export const getPage = (state: RootState) => state.pages;
 
-export const { setPageSls, downSalePage, upSalePage, upCatalogPage, downCatalogPage, clearCatalogPage, setPageLocation } =
-  profilePagesSlice.actions;
+export const {
+  setPageSls,
+  downSalePage,
+  upSalePage,
+  upCatalogPage,
+  downCatalogPage,
+  clearCatalogPage,
+  setPageLocation,
+  setBeforePage,
+} = profilePagesSlice.actions;
 
 export default profilePagesSlice.reducer;

@@ -1,0 +1,90 @@
+.wrapperAuthPage {
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+}
+
+.wrapper {
+  width: 100%;
+  margin: 0 auto;
+}
+.form {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+.input {
+  background: #f3f3f7;
+  border: 1px solid #e2e2e9;
+  border-radius: 10px;
+  font-weight: 400;
+  font-size: 20px;
+  line-height: 27px;
+  color: #000000;
+  padding-left: 24px;
+}
+.formBlock {
+  margin-top: 25px;
+  display: flex;
+  flex-direction: column;
+}
+.formBlock label {
+  font-size: 16px;
+  line-height: 22px;
+  color: #888888;
+}
+.button {
+  margin-top: 25px;
+  border-radius: 31px;
+  background-color: #ff0000;
+  color: white;
+  min-width: 112px;
+  padding: 0px 10px;
+  height: 48px;
+  border: none;
+  font-size: 16px;
+  cursor: pointer;
+}
+.button:hover {
+  background: #ffa900;
+}
+.nameAuth {
+  text-align: center;
+  margin-top: 50px;
+  font-size: 40px;
+}
+.swapRegAuth {
+  margin-top: 20px;
+  border: none;
+  background-color: inherit;
+  font-size: 16px;
+  line-height: 22px;
+  color: #888888;
+  cursor: pointer;
+}
+
+.swapRegAuth:hover {
+  color: black;
+  text-decoration: underline;
+}
+
+.authSocial {
+  display: flex;
+  border-radius: 20px;
+  border: none;
+  margin-top: 25px;
+  padding: 6px 20px;
+  line-height: 30px;
+  cursor: pointer;
+  background-color: #f3f3f7;
+  box-sizing: border-box;
+  width: 270px;
+  justify-content: center;
+  font-weight: 400;
+  font-size: 20px;
+  img {
+    padding-left: 10px;
+    width: 30px;
+  }
+}

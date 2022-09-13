@@ -5,17 +5,29 @@ import Search from "../search";
 import person from "../../assets/person.png";
 import like from "../../assets/like.png";
 import shoppingCart from "../../assets/shoppingCart.svg";
-import { Link } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 import { useAppDispatch } from "../../redux/store";
-import { setPageSls } from "../../redux/slices/pageSlice";
+import { getPage, setBeforePage, setPageSls } from "../../redux/slices/pageSlice";
 import { useSelector } from "react-redux";
 import { getTotalPriceItems } from "../../redux/slices/cartSlice";
 import ButtonCatalog from "../buttons/buttonCatalog";
 import ButtonDelivery from "../buttons/buttonDelivery";
-import { useWhyDidYouUpdate } from "ahooks";
+import { getAuth } from "firebase/auth";
+import { useAuthState } from "react-firebase-hooks/auth";
+
 const Header = () => {
+
   const dispatch = useAppDispatch();
   const totalPrice = useSelector(getTotalPriceItems);
+  
+  const auth = getAuth();
+  const [user, loading, error] = useAuthState(auth);
+
+  const setProfilePage = (page: string) => {
+    !user && dispatch(setBeforePage("/profile"));
+    dispatch(setPageSls(page));
+  };
+
 
   return (
     <div className={s.wrapper}>
@@ -29,12 +41,12 @@ const Header = () => {
           <ButtonDelivery />
         </div>
         <div className={s.buttons}>
-          <Link to="/profile" onClick={() => dispatch(setPageSls("person"))}>
+          <Link to={!user ? "/authorization" : "/profile"} onClick={() => setProfilePage("person")}>
             <button className={s.buttons__button}>
               <img src={person} alt="person" />
             </button>
           </Link>
-          <Link to="/profile" onClick={() => dispatch(setPageSls("like"))}>
+          <Link to={!user ? "/authorization" : "/profile"} onClick={() => setProfilePage("like")}>
             <button className={s.buttons__button}>
               <img src={like} alt="like" />
             </button>
@@ -44,7 +56,7 @@ const Header = () => {
           <div className={s.showCatalog}>
             <ButtonCatalog />
           </div>
-          <Link to="/cart">
+          <Link to={!user ? "/authorization" : "/cart"}>
             <div className={s.cart}>
               <img src={shoppingCart} alt="shoppingCart" />
               {totalPrice ? <b>{totalPrice} Руб.</b> : <b>Корзина</b>}

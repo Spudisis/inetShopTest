@@ -1,15 +1,13 @@
 import React from "react";
 import { useSelector } from "react-redux";
-import {
-  delItemCart,
-  getCartItems,
-  ItemCart,
-  setItemsCart,
-} from "../../redux/slices/cartSlice";
+import { delItemCart, getCartItems, ItemCart, setItemsCart } from "../../redux/slices/cartSlice";
 import { useAppDispatch } from "../../redux/store";
 import { propsItem } from "../listItem";
 import s from "../../sass/button.module.scss";
-
+import { useNavigate } from "react-router-dom";
+import { setBeforePage } from "../../redux/slices/pageSlice";
+import { useAuthState } from "react-firebase-hooks/auth";
+import { getAuth, signOut } from "firebase/auth";
 const ButtonBuy: React.FC<propsItem> = ({
   price,
   title,
@@ -21,11 +19,17 @@ const ButtonBuy: React.FC<propsItem> = ({
   nameProd,
   saleProd,
 }) => {
+  let navigate = useNavigate();
+
   const [haveCart, setHaveCart] = React.useState(false);
   const [countCart, setCountCart] = React.useState(0);
+
   const dispatch = useAppDispatch();
   const cartItem: ItemCart[] = useSelector(getCartItems);
 
+  const auth = getAuth();
+  const [user, loading, error] = useAuthState(auth);
+  
   React.useEffect(() => {
     changeCartCatalog();
   }, [cartItem]);
@@ -38,18 +42,11 @@ const ButtonBuy: React.FC<propsItem> = ({
       setHaveCart(true);
     }
   };
-
-  const addToCart = ({
-    price,
-    title,
-    count,
-    weight,
-    imageUrl,
-    classProduct,
-    id,
-    nameProd,
-    saleProd,
-  }: propsItem) => {
+  const addToCart = ({ price, title, count, weight, imageUrl, classProduct, id, nameProd, saleProd }: propsItem) => {
+    if (!user) {
+      dispatch(setBeforePage("/catalog"));
+      return navigate("/authorization");
+    }
     if (count > countCart) {
       dispatch(
         setItemsCart({

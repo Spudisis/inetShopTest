@@ -24,6 +24,7 @@ const Navigation = () => {
       elem.type === type && dispatch(() => ChangeClassProduct(elem.class, elem.classForPerson));
     });
     dispatch(clearCatalogPage());
+    dispatch(changeParamSale(false));
   };
   const ChangeClassProduct = (classT: string, classForPerson: string) => {
     const classAdd = { class: classT, classForPerson: classForPerson };
