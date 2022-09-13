@@ -1,0 +1,19 @@
+@import "../../../sass/mixin";
+
+.catalogButton {
+  @include buttonRed;
+
+  img {
+    margin-right: 8px;
+    width: 18px;
+    height: 12px;
+  }
+}
+.catalogButton:hover {
+  background: #ffa900;
+}
+@media screen and (max-width: 630px) {
+  .catalogButton {
+    margin: 0px;
+  }
+}

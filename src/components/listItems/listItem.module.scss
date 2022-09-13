@@ -1,0 +1,130 @@
+@import "../../sass/variables" ;
+
+
+.container {
+  min-height: 95%;
+  width: 304px;
+  display: flex;
+  flex-direction: column;
+  margin-bottom: 20px;
+  border-radius: 20px;
+  border: 1px solid #dadada;
+}
+
+.img {
+  height: 220px;
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  img {
+    height: 220px;
+    width: auto;
+  }
+  position: relative;
+}
+.saleBlockImg {
+  position: absolute;
+  background-color: $red;
+  border-radius: 20px 0px;
+  top: 0;
+  left: 0;
+  width: 52px;
+  height: 36px;
+  &__percent {
+    position: inherit;
+    left: 9px;
+    top: 5px;
+    font-size: 17px;
+  }
+}
+.info {
+  height: 186px;
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  &__priceCount {
+    display: flex;
+    justify-content: space-between;
+    &__count {
+      margin: 0px 19px;
+      font-weight: 400;
+      font-size: 14px;
+      color: #434343;
+    }
+  }
+}
+.title {
+  margin: 7px 19px;
+  font-weight: 600;
+  font-size: 20px;
+  color: #000000;
+  width: 266px;
+}
+.bottomCard {
+  display: flex;
+  justify-content: space-between;
+  margin: 0px 19px 10px;
+  align-items: center;
+}
+
+.priceBottom {
+  font-weight: 600;
+  font-size: 24px;
+  color: #000000;
+}
+.salePrice {
+  font-weight: 600;
+  font-size: 24px;
+  color: $red;
+}
+.price {
+  font-weight: 400;
+  font-size: 14px;
+  line-height: 19px;
+  text-decoration-line: line-through;
+  color: #434343;
+}
+
+@media screen and (max-width: 660px) {
+  .container {
+    width: 157px;
+  }
+  .img {
+    height: 114px;
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    img {
+      height: 114px;
+      width: auto;
+    }
+    position: relative;
+  }
+  .info {
+    height: 100%;
+    &__priceCount {
+      &__count {
+        margin: 0px 10px;
+
+        font-size: 8px;
+      }
+    }
+  }
+  .title {
+    margin: 7px 5px;
+    box-sizing: border-box;
+    font-size: 11px;
+    color: #000000;
+    width: 95%;
+  }
+  .priceBottom {
+    font-size: 12px;
+  }
+  .salePrice {
+    font-size: 12px;
+  }
+  .price {
+    font-size: 8px;
+  }
+}

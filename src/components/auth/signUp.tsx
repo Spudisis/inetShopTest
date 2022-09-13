@@ -1,7 +1,7 @@
 import React from "react";
 
 import { getAuth, createUserWithEmailAndPassword } from "firebase/auth";
-import Form from "./Form";
+import Form from "./Form/Form";
 import { useAppDispatch } from "../../redux/store";
 import { useAuthState, useCreateUserWithEmailAndPassword } from "react-firebase-hooks/auth";
 import { SetDB } from "./setDB";

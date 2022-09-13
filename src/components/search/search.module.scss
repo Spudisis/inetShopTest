@@ -1,0 +1,36 @@
+.blockSearch {
+  width: 317px;
+  height: 48px;
+  background: #ffffff;
+  border: 1px solid #e1e1e1;
+  border-radius: 16px;
+  position: relative;
+  background-image: url("../../assets/search.png");
+  background-repeat: no-repeat; /*Убираем повтор изображения*/
+  background-position: 280px;
+  padding-left: 10px;
+  box-sizing: border-box;
+  margin-right: 10px;
+}
+.blockSearch:focus {
+  border: 1px solid #ff0000;
+}
+.blockSearch:hover {
+  border: 1px solid #ff0000;
+}
+@media screen and (max-width: 1250px) {
+  .blockSearch {
+    margin-right: 0px;
+  }
+}
+@media screen and (max-width: 630px) {
+  .blockSearch {
+    margin-top: 10px;
+  }
+}
+@media screen and (max-width: 350px) {
+  .blockSearch {
+    width: 280px;
+    margin: 10px 0px 0px;
+  }
+}

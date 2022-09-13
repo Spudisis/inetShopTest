@@ -1,0 +1,57 @@
+.mainPopup {
+  position: relative;
+}
+.setFilter {
+  background: #fff8eb;
+  border-radius: 16px;
+  font-size: 16px;
+  width: 181px;
+  height: 38px;
+  line-height: 35px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+.sortingParam {
+  font-size: 15px;
+  background-color: inherit;
+  cursor: pointer;
+  width: 70%;
+  border: 1px solid rgba(255, 169, 0, 0.45);
+  border-radius: 16px 0px 0px 16px;
+}
+.arrow {
+  border: 1px solid rgba(255, 169, 0, 0.45);
+  background-color: inherit;
+  cursor: pointer;
+  width: 30%;
+  border-radius: 0px 16px 16px 0px;
+}
+.ascDesc {
+  transform: rotate(-90deg);
+}
+.ascDescRotate {
+  transform: rotate(90deg);
+}
+.popup {
+  position: absolute;
+  top: 0px;
+  width: 181px;
+  background: #fff8eb;
+  border: 1px solid rgba(255, 169, 0, 0.45);
+  border-radius: 16px;
+}
+.setFilterPopup {
+  background: #fff8eb;
+  border-bottom: 1px solid rgba(255, 169, 0, 0.45);
+  border-radius: 16px;
+  font-size: 16px;
+  text-align: center;
+  width: 181px;
+  height: 38px;
+  line-height: 35px;
+  color: #000000;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}

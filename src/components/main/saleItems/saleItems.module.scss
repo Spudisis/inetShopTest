@@ -1,0 +1,44 @@
+.block {
+  margin-bottom: 200px;
+}
+.saleBlockName {
+  display: flex;
+  justify-content: space-between;
+  margin-bottom: 37px;
+}
+.buttonSaleNavigateShow {
+  display: block;
+}
+.listSale {
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr 1fr;
+  justify-items: center;
+}
+.buttonSaleNavigateHidden {
+  display: none;
+}
+@media screen and (max-width: 1250px) {
+  .block {
+    margin-bottom: 100px;
+  }
+  .listSale {
+    grid-template-columns: 1fr 1fr;
+  }
+}
+@media screen and (max-width: 660px) {
+  .buttonSaleNavigateShow {
+    display: none;
+  }
+  .listSale {
+    column-gap: 0px;
+  }
+  .buttonSaleNavigateHidden {
+    width: 100%;
+    display: block;
+  }
+}
+@media screen and (max-width: 350px) {
+  .saleBlockName {
+    flex-direction: column;
+  }
+}

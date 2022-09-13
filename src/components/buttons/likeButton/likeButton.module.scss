@@ -1,0 +1,30 @@
+.like {
+  margin: 5px;
+  border: none;
+  top: 5%;
+  left: 83%;
+  position: absolute;
+  width: 22px;
+  height: 20px;
+  background-image: url("../../../assets/like.png");
+  background-color: rgba(1, 1, 1, 0);
+}
+.likeActive {
+  margin: 5px;
+  border: none;
+  top: 5%;
+  left: 83%;
+  position: absolute;
+  width: 22px;
+  height: 20px;
+  background-image: url("../../../assets/activeLike.png");
+  background-color: rgba(1, 1, 1, 0);
+}
+@media screen and (max-width: 660px) {
+  .like {
+    left: 75%;
+  }
+  .likeActive {
+    left: 75%;
+  }
+}

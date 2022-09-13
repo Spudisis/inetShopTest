@@ -1,0 +1,117 @@
+@import "../../../sass/mixin";
+
+.wrapper {
+  height: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+}
+.container {
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  cursor: pointer;
+  a {
+    text-decoration: none;
+  }
+}
+
+.logoSite {
+  min-width: 200px;
+  height: 55px;
+}
+
+
+
+.buttons {
+  display: flex;
+  &__button {
+    height: 48px;
+    width: 50px;
+    border: 1px solid #e1e1e1;
+    border-radius: 16px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-left: 10px;
+  }
+  &__button:hover {
+    background: #fff8eb;
+    border: 1px solid #ffa900;
+    cursor: pointer;
+  }
+  &__button:first-child {
+    margin-right: 14px;
+  }
+}
+.deliverySearch {
+  display: none;
+}
+.cart {
+  @include buttonRed;
+  img {
+    width: 26px;
+    height: 22px;
+    margin-right: 13px;
+  }
+}
+.cart:hover {
+  background: #ffa900;
+}
+.redButton {
+  display: flex;
+  justify-content: space-between;
+}
+.hide1250 {
+  display: flex;
+}
+.showCatalog {
+  display: none;
+}
+@media screen and (max-width: 1250px) {
+  .showCatalog {
+    display: block;
+  }
+  .deliverySearch {
+    margin-top: 20px;
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+  }
+  .hide1250 {
+    display: none;
+  }
+}
+@media screen and (max-width: 660px) {
+  .deliverySearch {
+    flex-direction: column;
+    align-items: center;
+    margin-top: 0px;
+  }
+  .container {
+    flex-direction: column;
+    justify-content: center;
+    align-content: space-between;
+  }
+  .redButton {
+    margin-top: 10px;
+    width: 280px;
+    justify-content: space-between;
+  }
+ 
+  .buttons {
+    width: 45%;
+    margin-top: 10px;
+    justify-content: space-between;
+    &__button {
+      margin: 0px;
+    }
+    &__button:first-child {
+      margin: 0px;
+    }
+  }
+}
+
+

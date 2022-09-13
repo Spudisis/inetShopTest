@@ -1,6 +1,6 @@
 import { createSlice, createAsyncThunk, PayloadAction } from "@reduxjs/toolkit";
 import axios from "axios";
-import { filter } from "../../pages/catalog";
+import { filter } from "../../pages/catalog/catalog";
 import { RootState } from "../store";
 
 export const fetchProductMock = createAsyncThunk<Item[], filter>(

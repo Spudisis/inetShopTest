@@ -1,5 +1,5 @@
 import { createSlice, createAsyncThunk, PayloadAction } from "@reduxjs/toolkit";
-import { propsItem } from "../../components/listItem";
+import { propsItem } from "../../components/listItems/listItem";
 import { RootState } from "../store";
 
 type likeItems = {

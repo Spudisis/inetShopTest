@@ -1,0 +1,19 @@
+.authSocial {
+  display: flex;
+  border-radius: 20px;
+  border: none;
+  margin-top: 25px;
+  padding: 6px 20px;
+  line-height: 30px;
+  cursor: pointer;
+  background-color: #f3f3f7;
+  box-sizing: border-box;
+  width: 270px;
+  justify-content: center;
+  font-weight: 400;
+  font-size: 20px;
+  img {
+    padding-left: 10px;
+    width: 30px;
+  }
+}

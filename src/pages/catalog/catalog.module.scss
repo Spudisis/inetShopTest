@@ -1,0 +1,125 @@
+.catalog {
+  margin-top: 81px;
+  display: flex;
+  flex-direction: column;
+}
+.filterAsk {
+  display: flex;
+  justify-content: space-between;
+  margin-bottom: 40px;
+}
+.filters {
+  display: flex;
+  width: 100%;
+}
+
+.typeCatalog {
+  font-weight: 700;
+  font-size: 32px;
+
+  text-transform: uppercase;
+
+  color: #000000;
+}
+
+.SelectFilter {
+  min-height: 100px;
+  width: 100%;
+}
+
+.FiltersComponent {
+  display: block;
+}
+.FilterComponentPopup {
+  display: none;
+  position: relative;
+  button {
+    font-weight: 500;
+    height: 100%;
+    border-radius: 31px;
+    background-color: #ff0000;
+    padding: 0px 10px;
+    outline: none;
+    border: none;
+    font-size: 16px;
+    color: #ffffff;
+    cursor: pointer;
+  }
+  button:hover {
+    background: #ffa900;
+  }
+  &__block {
+    padding: 20px;
+    z-index: 50;
+    border-radius: 30px;
+    left: 50%;
+    -webkit-transform: translate(-50%);
+    -moz-transform: translate(-50%);
+    -ms-transform: translate(-50%);
+    -o-transform: translate(-50%);
+    transform: translate(-50%);
+    width: 500px;
+    border: 2px solid #ff0000;
+    background-color: white;
+    position: absolute;
+    top: 55px;
+  }
+}
+.closeModal {
+  z-index: 51;
+  width: 50px;
+  position: absolute;
+  left: 280px;
+  top: 70px;
+}
+@media screen and (max-width: 1250px) {
+  .filters {
+    flex-direction: column;
+  }
+  .FiltersComponent {
+    display: none;
+  }
+  .FilterComponentPopup {
+    display: block;
+  }
+}
+@media screen and (max-width: 660px) {
+  .filterAsk {
+    flex-direction: column;
+    align-items: center;
+  }
+  .FilterComponentPopup {
+    margin: 10px 0px;
+    button {
+      height: 40px;
+      padding: 0px 20px;
+    }
+    &__block {
+      position: fixed;
+      top: 0;
+      right: 0;
+      bottom: 0;
+
+      width: 100vw;
+      height: 100vh;
+      border: 0px;
+      border-radius: 0px;
+    }
+  }
+  .closeModal {
+    position: fixed;
+    width: 100px;
+    top: 5vh;
+    left: 80vw;
+  }
+}
+@media screen and (max-width: 600px) {
+  .closeModal {
+    width: 60px;
+    top: 1vh;
+    left: 75vw;
+  }
+  .catalog {
+    margin-top: 20px;
+  }
+}

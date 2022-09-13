@@ -1,6 +1,6 @@
 import React from "react";
 import { getAuth, signInWithPopup, signInWithEmailAndPassword, GoogleAuthProvider } from "firebase/auth";
-import Form from "./Form";
+import Form from "./Form/Form";
 import { useAppDispatch } from "../../redux/store";
 import { useSignInWithEmailAndPassword } from "react-firebase-hooks/auth";
 const Auth = () => {
