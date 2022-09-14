@@ -1,3 +1,4 @@
+@import "../../sass/variables";
 .wrapper {
   margin: 81px 0px;
   &__cart {
@@ -29,15 +30,12 @@
   line-height: 40px;
 }
 .toCatalog {
-  background: #fff8eb;
+  background: $whiteOrange;
   color: black;
-  border: 1px solid rgba(255, 169, 0, 0.45);
+  border: 1px solid $borderColor;
   border-radius: 16px;
   text-decoration: none;
   padding: 10px 20px;
-}
-.toCatalog:hover {
-  background: #ffe8bc;
 }
 .InfoCart {
   display: flex;

@@ -1,3 +1,4 @@
+@import "../../sass/variables";
 .catalog {
   margin-top: 81px;
   display: flex;
@@ -16,9 +17,7 @@
 .typeCatalog {
   font-weight: 700;
   font-size: 32px;
-
   text-transform: uppercase;
-
   color: #000000;
 }
 
@@ -26,10 +25,13 @@
   min-height: 100px;
   width: 100%;
 }
-
+.itemsFiltersSet {
+  max-width: 980px;
+}
 .FiltersComponent {
   display: block;
 }
+
 .FilterComponentPopup {
   display: none;
   position: relative;
@@ -37,7 +39,7 @@
     font-weight: 500;
     height: 100%;
     border-radius: 31px;
-    background-color: #ff0000;
+    background-color: $red;
     padding: 0px 10px;
     outline: none;
     border: none;
@@ -46,7 +48,7 @@
     cursor: pointer;
   }
   button:hover {
-    background: #ffa900;
+    background: $orange;
   }
   &__block {
     padding: 20px;
@@ -59,7 +61,7 @@
     -o-transform: translate(-50%);
     transform: translate(-50%);
     width: 500px;
-    border: 2px solid #ff0000;
+    border: 2px solid $red;
     background-color: white;
     position: absolute;
     top: 55px;

@@ -1,7 +1,8 @@
+@import "../../../sass/variables";
 .button {
-  border: 1px solid #ff0000;
+  border: 1px solid $red;
   border-radius: 60px;
-  color: #ff0000;
+  color: $red;
   font-weight: 600;
   font-size: 16px;
   padding: 0px 20px;
@@ -9,13 +10,13 @@
   cursor: pointer;
 }
 .button:hover {
-  background-color: #ffa900;
+  background-color: $orange;
   color: white;
 }
 
 .counterBuy {
-  background: #fff8eb;
-  border: 1px solid #ffe7b9;
+  background: $whiteOrange;
+  border: 1px solid $whiteOrange;
   border-radius: 58px;
   width: 109px;
   height: 50px;
@@ -32,11 +33,11 @@
   text-align: center;
   line-height: 20px;
   border: none;
-  color: #ffa900;
+  color: $orange;
 }
 .changeCounter:hover {
   color: white;
-  background: #ffa900;
+  background: $orange;
 }
 @media screen and (max-width: 660px) {
   .button {

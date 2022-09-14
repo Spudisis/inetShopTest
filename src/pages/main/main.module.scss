@@ -1,7 +1,8 @@
+@import "../../sass/variables";
+
 .wrapperItems {
   display: grid;
   grid-template-columns: repeat(3, 1fr);
-
   justify-items: center;
 }
 
@@ -45,7 +46,7 @@
     }
   }
   div:hover {
-    border: 1px solid #ffa900;
+    border: 1px solid $orange;
   }
 }
 

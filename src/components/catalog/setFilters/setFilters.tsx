@@ -30,7 +30,7 @@ const SetFilters = React.memo(() => {
   return (
     <div className={s.container}>
       {type && (
-        <button className={s.block} onClick={() => deleteTypeView()}>
+        <button className={s.blockType} onClick={() => deleteTypeView()}>
           {type} &#10006;
         </button>
       )}

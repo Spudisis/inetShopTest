@@ -68,19 +68,22 @@ const ShowItems: React.FC<pages> = React.memo(({ catalogPageCounter }) => {
 
   return (
     <>
-      <div className={s.wrapperItems}>
-        {loading === Status.LOADING ? (
-          [...new Array(1)].map((_, index) => <Skeleton key={index} />)
-        ) : loading === Status.ERROR ? (
-          <div className={s.warn}>Произошла ошибка</div>
-        ) : itemsDop.length === 0 ? (
-          <div className={s.warn}>Попробуйте другие параметры для поиска</div>
-        ) : sale ? (
-          slicesItemsSale
-        ) : (
-          itemRenderNoneSale
-        )}
+      <div className={s.root}>
+        <div className={s.wrapperItems}>
+          {loading === Status.LOADING ? (
+            [...new Array(1)].map((_, index) => <Skeleton key={index} />)
+          ) : loading === Status.ERROR ? (
+            <div className={s.warn}>Произошла ошибка</div>
+          ) : itemsDop.length === 0 ? (
+            <div className={s.warn}>Попробуйте другие параметры для поиска</div>
+          ) : sale ? (
+            slicesItemsSale
+          ) : (
+            itemRenderNoneSale
+          )}
+        </div>
       </div>
+
       <div className={s.buttonItemNavigate}>
         <button onClick={() => prevPage()}>Назад</button>
         <button onClick={() => nextPage()}>Далее</button>

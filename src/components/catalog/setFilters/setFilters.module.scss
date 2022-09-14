@@ -1,3 +1,5 @@
+@import "../../../sass/mixin";
+@import "../../../sass/variables";
 .container {
   display: flex;
   flex-wrap: wrap;
@@ -5,21 +7,22 @@
   height: 100%;
 }
 .block {
-  margin-right: 10px;
-  margin-bottom: 5px;
   background: #fff8eb;
   border: 1px solid rgba(255, 169, 0, 0.45);
-  border-radius: 16px;
-  align-items: flex-start;
-  padding: 8px 24px;
-  gap: 10px;
-
-  background-color: inherit;
-  cursor: pointer;
+  @include blockSetFilters;
 }
 .block:hover {
   background: #ffa900;
   color: white;
+}
+.blockType {
+  @include blockSetFilters;
+  background-color: $red;
+  color: white;
+  border: none;
+}
+.blockType:hover {
+  background: #ffa900;
 }
 .textHelp {
   width: 100%;

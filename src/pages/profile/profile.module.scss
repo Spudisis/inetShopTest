@@ -1,3 +1,5 @@
+@import "../../sass/variables";
+
 .container {
   margin-top: 81px;
 }
@@ -6,10 +8,10 @@
   font-size: 32px;
   line-height: 44px;
   text-transform: uppercase;
-
   color: #000000;
   margin-bottom: 38px;
 }
+
 .navigation {
   display: flex;
   width: 100%;
@@ -37,7 +39,7 @@
   color: #000000;
 }
 .spanNavig:after {
-  background-color: #ff0000;
+  background-color: $red;
   display: block;
   content: "";
   height: 4px;
@@ -72,7 +74,7 @@
   color: #000000;
 }
 .spanNavigActive:after {
-  background-color: #ff0000;
+  background-color: $red;
   display: block;
   content: "";
   height: 4px;

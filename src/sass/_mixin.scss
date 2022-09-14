@@ -2,7 +2,7 @@
 
 @mixin buttonRed {
   display: flex;
-  width: 132px;
+  width: 122px;
   height: 48px;
   margin: 0px 10px;
   border-radius: 31px;
@@ -15,5 +15,16 @@
   font-style: normal;
   font-size: 16px;
   color: #ffffff;
+  cursor: pointer;
+}
+@mixin blockSetFilters {
+  margin-right: 10px;
+  margin-bottom: 5px;
+
+  border-radius: 16px;
+  align-items: flex-start;
+  padding: 8px 24px;
+  gap: 10px;
+  background-color: inherit;
   cursor: pointer;
 }

@@ -1,3 +1,5 @@
+@import "../../sass/variables";
+
 .wrapper {
   height: 630px;
   display: flex;
@@ -30,13 +32,13 @@
   display: flex;
 }
 .mainPageLink {
-  border: 1px solid #ff0000;
+  border: 1px solid $red;
   border-radius: 31px;
   padding: 5px 10px;
   font-weight: 700;
   text-decoration: none;
   font-size: 16px;
   line-height: 35px;
-  color: #ff0000;
+  color: $red;
   margin-right: 20px;
 }
