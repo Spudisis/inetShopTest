@@ -2,13 +2,12 @@ import React from "react";
 import { useSelector } from "react-redux";
 import { useAppDispatch } from "../../redux/store";
 import LikePage from "../likePage/LikePage";
-import Person from "../Person";
+import Person from "../Person/Person";
 import s from "./profile.module.scss";
 import { NavLink, useNavigate } from "react-router-dom";
 import { getPage, setPageSls } from "../../redux/slices/pageSlice";
 import { getAuth, signOut } from "firebase/auth";
 import { useAuthState } from "react-firebase-hooks/auth";
-
 const Profile = () => {
   const dispatch = useAppDispatch();
   const { page } = useSelector(getPage);

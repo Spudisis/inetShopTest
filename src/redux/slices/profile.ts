@@ -4,9 +4,7 @@ import { RootState } from "../store";
 const initialState: any = {
   authStatus: false,
   beforePage: "",
-  email: "",
-  token: "",
-  id: "",
+  userInfo: {},
 };
 export const profile = createSlice({
   name: "classChange",
@@ -19,19 +17,15 @@ export const profile = createSlice({
       state.beforePage = action.payload;
     },
     setUser: (state, action: PayloadAction<any>) => {
-      state.email = action.payload.email;
-      state.token = action.payload.token;
-      state.id = action.payload.id;
+      state.userInfo = action.payload;
     },
     removeUser: (state) => {
-      state.email = "";
-      state.token = "";
-      state.id = "";
+      state.userInfo = {};
     },
   },
 });
 
-export const getAuthStatus = (state: RootState) => state.pages;
+export const getAuthStatus = (state: RootState) => state.profile;
 
 export const { setAuthStatus, setBeforePage, setUser, removeUser } = profile.actions;
 

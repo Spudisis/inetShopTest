@@ -5,28 +5,36 @@ import Form from "./Form/Form";
 import { useAppDispatch } from "../../redux/store";
 import { useAuthState, useCreateUserWithEmailAndPassword } from "react-firebase-hooks/auth";
 import { SetDB } from "./setDB";
+import { getData } from "../../pages/Person/Person";
+import { getAuthStatus } from "../../redux/slices/profile";
+import { useSelector } from "react-redux";
 const SignUp = () => {
   const auth = getAuth();
+  const { userInfo } = useSelector(getAuthStatus);
   const [createUserWithEmailAndPassword, user, loading, error] = useCreateUserWithEmailAndPassword(auth);
 
   const dispatch = useAppDispatch();
 
-  const handleRegister = (email: string, password: string) => {
-    createUserWithEmailAndPassword(email, password);
+  const handleRegister = async (register: any) => {
+    const { email, password } = register;
+    await createUserWithEmailAndPassword(email, password);
   };
 
   React.useEffect(() => {
-    if (loading) {
-      console.log("load");
+    if (error) {
+      console.log(error);
     }
     if (user) {
-      const { user: info } = user;
-      console.log(info);
-      SetDB(info);
+      const func = async () => {
+        const { user: info } = user;
+        const data = await getData(info, dispatch);
+        data === 0 && SetDB(info);
+      };
+      func();
     }
   }, [user, loading]);
 
-  return <Form title="Зарегистрироваться" handleClick={handleRegister} />;
+  return <Form title="Зарегистрироваться" handleClick={handleRegister} result={loading ? "" : error} />;
 };
 
 export default SignUp;
