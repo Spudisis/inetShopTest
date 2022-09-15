@@ -1,0 +1,41 @@
+.inputsBlocks {
+  display: flex;
+  flex-direction: column;
+}
+.block {
+  display: flex;
+  flex-direction: column;
+  margin-top: 25px;
+  input {
+    width: 309px;
+    height: 46px;
+    background: #f3f3f7;
+    border: 1px solid #e2e2e9;
+    border-radius: 10px;
+    padding-left: 25px;
+  }
+  label {
+    font-size: 16px;
+    line-height: 22px;
+    color: #888888;
+  }
+}
+.buttons {
+  display: flex;
+  justify-content: space-between;
+  width: 340px;
+  margin-top: 30px;
+}
+.submit {
+  font-weight: 400;
+  font-size: 20px;
+  line-height: 22px;
+  color: #888888;
+  border: none;
+  background-color: white;
+  cursor: pointer;
+  text-align: right;
+}
+.submit:hover {
+  color: black;
+}
