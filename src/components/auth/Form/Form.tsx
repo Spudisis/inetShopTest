@@ -23,7 +23,7 @@ const Form = ({ title, handleClick, result }: any) => {
         </div>
         <input className={s.button} type="submit" value={title} />
       </form>
-      <AuthGoogle />
+      {/* <AuthGoogle /> */}
     </div>
   );
 };

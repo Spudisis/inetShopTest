@@ -10,8 +10,11 @@ firebase.initializeApp({
   storageBucket: process.env.REACT_APP_FIREBASE_STORAGE_BUCKET,
   messagingSenderId: process.env.REACT_APP_FIREBASE_MESSAGING_SENDER_ID,
   appId: process.env.REACT_APP_FIREBASE_APP_ID,
-  measurementId: "G-CWNQK4VVB6",
+  measurementId: "G-9V2DNYGP7Q",
+  experimentalForceLongPolling: true,
+  useFetchStreams: false,
 });
+
 export default firebase;
 export const auth = firebase.auth();
 export const firestore = firebase.firestore();

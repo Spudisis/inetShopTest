@@ -8,6 +8,7 @@ import { useNavigate } from "react-router-dom";
 import { setBeforePage } from "../../../redux/slices/pageSlice";
 import { useAuthState } from "react-firebase-hooks/auth";
 import { getAuth, signOut } from "firebase/auth";
+import { AddItems } from "../../../firestore/addItemsCart";
 const ButtonBuy: React.FC<propsItem> = ({
   price,
   title,

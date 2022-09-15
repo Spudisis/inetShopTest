@@ -9,15 +9,22 @@ import { Link, useNavigate } from "react-router-dom";
 import { useAppDispatch } from "../../../redux/store";
 import { getPage, setBeforePage, setPageSls } from "../../../redux/slices/pageSlice";
 import { useSelector } from "react-redux";
-import { getTotalPriceItems } from "../../../redux/slices/cartSlice";
+import { getCartItems, getTotalPriceItems, ItemCart } from "../../../redux/slices/cartSlice";
 import ButtonCatalog from "../../buttons/buttonCatalog/buttonCatalog";
 import ButtonDelivery from "../../buttons/buttonDelivery/buttonDelivery";
 import { getAuth } from "firebase/auth";
 import { useAuthState } from "react-firebase-hooks/auth";
+import { CheckCartItemsDB } from "../../../firestore/checkCartItemsDB";
+import { propsItem } from "../../listItems/listItem";
+import { getItemsLike } from "../../../redux/slices/likeItemsSlice";
+import { AddItems } from "../../../firestore/addItemsCart";
+import { AddItemsLike } from "../../../firestore/addItemsLike";
 
 const Header = () => {
   const dispatch = useAppDispatch();
   const totalPrice = useSelector(getTotalPriceItems);
+  const cartItem: ItemCart[] = useSelector(getCartItems);
+  const itemsLike: propsItem[] = useSelector(getItemsLike);
 
   const auth = getAuth();
   const [user, loading, error] = useAuthState(auth);
@@ -26,6 +33,26 @@ const Header = () => {
     !user && dispatch(setBeforePage("/profile"));
     dispatch(setPageSls(page));
   };
+
+  React.useEffect(() => {
+    console.log("a");
+    user && CheckCartItemsDB({ user, dispatch, cartItem, itemsLike });
+  }, [user]);
+
+  React.useEffect(() => {
+    if (user) {
+      let uid = user.uid;
+      AddItems({ uid, cartItem });
+    }
+  }, [cartItem]);
+
+  React.useEffect(() => {
+    console.log(itemsLike);
+    if (user) {
+      let uid = user.uid;
+      AddItemsLike({ uid, itemsLike });
+    }
+  }, [itemsLike]);
 
   return (
     <div className={s.wrapper}>

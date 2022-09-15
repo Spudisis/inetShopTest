@@ -10,6 +10,13 @@ import SetFilters from "../../components/catalog/setFilters/setFilters";
 import PopupSort, { PopupClick } from "../../components/catalog/popupSort/popupSort";
 import ShowItems from "../../components/catalog/showitems/showItems";
 import { getPage } from "../../redux/slices/pageSlice";
+import { AddItems } from "../../firestore/addItemsCart";
+import { getAuth } from "firebase/auth";
+import { useAuthState } from "react-firebase-hooks/auth";
+import { getCartItems, ItemCart } from "../../redux/slices/cartSlice";
+import { AddItemsLike } from "../../firestore/addItemsLike";
+import { getItemsLike } from "../../redux/slices/likeItemsSlice";
+import { propsItem } from "../../components/listItems/listItem";
 
 export type filter = {
   search: string;
@@ -21,11 +28,18 @@ export type filter = {
 
 const Catalog = () => {
   const dispatch = useAppDispatch();
-  const { items, itemsDop, loading }: ItemsType = useSelector(getDataItems);
+  const { items }: any = useSelector(getDataItems);
   const { search, filterBy, ascDesc, filtersView, type }: statefilter = useSelector(getFilterData);
   const { sale }: stateSort = useSelector(gerSortData);
   const { catalogPageCounter } = useSelector(getPage);
+  const cartItem: ItemCart[] = useSelector(getCartItems);
   const [visible, isVisible] = React.useState(false);
+  const itemsLike: propsItem[] = useSelector(getItemsLike);
+
+  const auth = getAuth();
+  const [user, loading, error] = useAuthState(auth);
+  
+
   const fetchData = () => {
     dispatch(fetchProductMock({ search, filterBy, ascDesc, type, sale }));
   };
@@ -33,7 +47,7 @@ const Catalog = () => {
     let newIt: Item[] = items;
     if (filtersView.length !== 0) {
       newIt = [];
-      items.forEach((elem) => {
+      items.forEach((elem: any) => {
         filtersView.forEach((obj) => {
           if (obj.class === elem.class) {
             newIt.push(elem);

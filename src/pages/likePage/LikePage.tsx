@@ -10,6 +10,8 @@ import { getItemsLike } from "../../redux/slices/likeItemsSlice";
 const LikePage = () => {
   const dispatch = useAppDispatch();
   const itemsLike: propsItem[] = useSelector(getItemsLike);
+
+  
   return (
     <>
       {itemsLike.length !== 0 ? (

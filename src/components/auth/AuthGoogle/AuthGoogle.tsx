@@ -6,7 +6,7 @@ import "firebase/compat/auth";
 import { auth } from "../../../Firebase";
 import s from "./AuthGoogle.module.scss";
 import googleImg from "../../../assets/googleImg.svg.webp";
-import { SetDB } from "../setDB";
+import { SetDB } from "../../../firestore/setDB";
 import { useAuthState } from "react-firebase-hooks/auth";
 import { getData } from "../../../pages/Person/Person";
 import { useAppDispatch } from "../../../redux/store";

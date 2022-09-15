@@ -16,10 +16,12 @@ import Authorization from "./pages/authorization/authorization";
 
 function App() {
   let location = useLocation();
-  const dispath = useAppDispatch();
+  const dispatch = useAppDispatch();
+
   React.useEffect(() => {
-    dispath(setPageLocation(location.pathname));
+    dispatch(setPageLocation(location.pathname));
   }, [location]);
+
   return (
     <>
       <div className="container">

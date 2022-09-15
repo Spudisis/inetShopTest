@@ -12,6 +12,8 @@ import { useSelector } from "react-redux";
 import { getAuthStatus, removeUser, setUser } from "../../redux/slices/profile";
 import { isEmpty } from "lodash";
 import { firestore } from "../../Firebase";
+import { clearCart } from "../../redux/slices/cartSlice";
+import { clearLikeProduct } from "../../redux/slices/likeItemsSlice";
 
 export const getData = async (user: any, dispatch: any) => {
   if (user) {
@@ -52,6 +54,10 @@ const Person = () => {
       if (isEmpty(userInfo)) {
         getData(user, dispatch);
       }
+    if (!user) {
+      dispatch(clearCart());
+      dispatch(clearLikeProduct());
+    }
   }, [user]);
 
   const onSubmit = (data: any) => {
