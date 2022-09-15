@@ -1,9 +1,9 @@
 {
   "files": {
-    "main.css": "/inetShopTest/static/css/main.70b99b8a.css",
-    "main.js": "/inetShopTest/static/js/main.e08f193d.js",
-    "static/css/116.639579ee.chunk.css": "/inetShopTest/static/css/116.639579ee.chunk.css",
-    "static/js/116.7bf6aa8d.chunk.js": "/inetShopTest/static/js/116.7bf6aa8d.chunk.js",
+    "main.css": "/inetShopTest/static/css/main.714229c9.css",
+    "main.js": "/inetShopTest/static/js/main.a132cef1.js",
+    "static/css/526.e90aa93f.chunk.css": "/inetShopTest/static/css/526.e90aa93f.chunk.css",
+    "static/js/526.84831cb0.chunk.js": "/inetShopTest/static/js/526.84831cb0.chunk.js",
     "static/media/slider1.svg": "/inetShopTest/static/media/slider1.916df2b3b85ca4cbe348451003711b0b.svg",
     "static/media/6bread.svg": "/inetShopTest/static/media/6bread.71ed8d63ac0028ca17f9.svg",
     "static/media/3grill.svg": "/inetShopTest/static/media/3grill.b1a6fcc344e04c2b729e.svg",
@@ -33,7 +33,6 @@
     "static/media/1vareniki.svg": "/inetShopTest/static/media/1vareniki.a631097a379ea672d159.svg",
     "static/media/4vegetables.png": "/inetShopTest/static/media/4vegetables.6ac7e0f9405d7dd2e691.png",
     "static/media/saleBanner.svg": "/inetShopTest/static/media/saleBanner.baf922afd762d07cb8483c5e1da05368.svg",
-    "static/media/googleImg.svg.webp": "/inetShopTest/static/media/googleImg.svg.fdb65996e2830127b4f3.webp",
     "static/media/6hinkali.svg": "/inetShopTest/static/media/6hinkali.3901f936bb26be26ac30.svg",
     "static/media/logoSite.svg": "/inetShopTest/static/media/logoSite.44c9bc9ae8175d34052ca562c668a14d.svg",
     "static/media/pizza.svg": "/inetShopTest/static/media/pizza.853b4570391bd13a32b63c0b8b8b2815.svg",
@@ -46,13 +45,13 @@
     "static/media/shoppingCart.svg": "/inetShopTest/static/media/shoppingCart.6945a709023636d91afb1a932c314940.svg",
     "index.html": "/inetShopTest/index.html",
     "static/media/trash.svg": "/inetShopTest/static/media/trash.30b4b4269ee96ff8fd5ff2ce26e21ea5.svg",
-    "main.70b99b8a.css.map": "/inetShopTest/static/css/main.70b99b8a.css.map",
-    "main.e08f193d.js.map": "/inetShopTest/static/js/main.e08f193d.js.map",
-    "116.639579ee.chunk.css.map": "/inetShopTest/static/css/116.639579ee.chunk.css.map",
-    "116.7bf6aa8d.chunk.js.map": "/inetShopTest/static/js/116.7bf6aa8d.chunk.js.map"
+    "main.714229c9.css.map": "/inetShopTest/static/css/main.714229c9.css.map",
+    "main.a132cef1.js.map": "/inetShopTest/static/js/main.a132cef1.js.map",
+    "526.e90aa93f.chunk.css.map": "/inetShopTest/static/css/526.e90aa93f.chunk.css.map",
+    "526.84831cb0.chunk.js.map": "/inetShopTest/static/js/526.84831cb0.chunk.js.map"
   },
   "entrypoints": [
-    "static/css/main.70b99b8a.css",
-    "static/js/main.e08f193d.js"
+    "static/css/main.714229c9.css",
+    "static/js/main.a132cef1.js"
   ]
 }
